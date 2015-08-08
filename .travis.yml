@@ -14,11 +14,14 @@ env:
   global:
   #
   # You have to encrypt it with the travis gem
-  # http://about.travis-ci.org/docs/user/build-configuration/#Secure-environment-variables
+  # http://docs.travis-ci.com/user/encryption-keys/
+  #
+  # Run this from within the project directory. Travis must already be connected
+  # with this github project.
   #
   # travis encrypt GH_TOKEN=XYXYXYXYXY
   #
-  - secure: "avDaeRFZ7a0CsbT97gh6irWRo0UH3gZuPfWW24DuStFh+IpRrnPKZQ/ophyjlFSGqLaxS00fsyTavIs8kiyUe03Gg7PNHBTx6YJynOZkogTZFvi/o7jnDrQ887sd+ryjZUdJ3E+SQ2WzpY4F8oKay9igKbVw5rW6pen630VZP44="
+  - secure: "lRRPix09eobnDE3O5XYodpKVxvVH+KqzM3kx1YLkXl/6tQYw0qT8kzMjEe6G4oL6nS/2kPIWJ+1xyjZG+Nqgwpm8GPXvE8h3RxB+oT9O3SrTYnoabLdR21qDWkftO52hpOofIkEuBHJMl/ipDGHju1Ygv1SGrrgw+zrLivj46e5j6bYbbYUbNmYUJrfmcGEEGMNJyZIe8jrYfuP7HvYbNgtb+7Qy8VgnwjJP6eJuddOtTJgOL25/yuMLPx8oS0bKHh+L7IJe+MCfsixZCXSy3vsPGZatCZ4kWRRkytxSkGUiT/gheC/QTfIFqmmQyMTAkZAD6qMXdiVjIn3IogoK0c7wLjKyaRkE609ljEl56e5WXOjyZSuTKnv9xAje/fvI5L9jSqei4zLHOar9CHfsLWXPrfaiVnxc7k+ege8ZTzY1t1WHnMq40PhTQXcYd/JUMq20LDocUkOR709PTYVsyrpINVwQQBzLQhRz8fRItgq1qJ7dOzaaLXx+KXvcR+6jM8mB57pWDT7adW5UgrnWPgg8Ualgg2gdEgqXiddvhz8VW6oaN/Qm069hJUpjtbV0XSmc3W9xSqYdF2L00TSWDnueU3VOoios+tJmTU6Zhl74Pb6wpKypMuLhTQxerF2VoNdqoO2+f4FE8bk0/XQAvNsqTcG40ZB4v/ShxNYL3cY="
 
 before_install:
 - echo -e "machine github.com\n  login $GH_TOKEN" >> ~/.netrc
@@ -35,5 +38,4 @@ after_success:
 # If this is the master branch, and not a Pull Request, publish. That way we
 # only publish after merging to master, but the build process can run for any
 # Pull Request.
-#- make publish
 - if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then make publish; fi

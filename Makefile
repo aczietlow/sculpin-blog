@@ -43,7 +43,7 @@ publish:
 	# all of them together into a single statement as far as the shell is concerned,
 	# because each statement runs in its own shell instance.
 	cd output_prod && \
-	git init && \
+	git init && \`
 	git config user.name '$(GIT_USER)' && \
 	git config user.email '$(GIT_EMAIL)' && \
 	git add . && \
@@ -58,9 +58,3 @@ clean: compass_clean
 generate:
 	# Generate sculpin on a local server
 	bin/sculpin generate --server --watch
-
-
-lint:
-	#Run linters and test suites
-	bundle exec scss-lint source/code/sass/
-	#bundle exec htmlproof output_prod/

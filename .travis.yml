@@ -1,0 +1,39 @@
+language: php
+
+php:
+- 5.5
+
+cache:
+  bundler: true
+  directories:
+  - vendor
+  - $COMPOSER_CACHE_DIR
+
+# This is the travis-enrypted GitHub token for the Palantir-Travis GitHub user.
+env:
+  global:
+  #
+  # You have to encrypt it with the travis gem
+  # http://about.travis-ci.org/docs/user/build-configuration/#Secure-environment-variables
+  #
+  # travis encrypt GH_TOKEN=XYXYXYXYXY
+  #
+  - secure: "avDaeRFZ7a0CsbT97gh6irWRo0UH3gZuPfWW24DuStFh+IpRrnPKZQ/ophyjlFSGqLaxS00fsyTavIs8kiyUe03Gg7PNHBTx6YJynOZkogTZFvi/o7jnDrQ887sd+ryjZUdJ3E+SQ2WzpY4F8oKay9igKbVw5rW6pen630VZP44="
+
+before_install:
+- echo -e "machine github.com\n  login $GH_TOKEN" >> ~/.netrc
+
+before_script:
+# Stop nokogiri from attempted to complile libxml2 for faster install times.
+- env NOKOGIRI_USE_SYSTEM_LIBRARIES=true bundle install
+- composer install --prefer-dist
+
+script:
+- make build
+
+after_success:
+# If this is the master branch, and not a Pull Request, publish. That way we
+# only publish after merging to master, but the build process can run for any
+# Pull Request.
+#- make publish
+- if [[ $TRAVIS_PULL_REQUEST == "false" && $TRAVIS_BRANCH == "master" ]]; then make publish; fi

@@ -1,10 +1,14 @@
 /.sculpin/
-/app/cache/*
-/app/config/sculpin_kernel_*.yml
-/app/config/sculpin_site_*.yml
-/app/logs/*
+/source/code/css/
+
+
+*.sass-cache/
 /output_*/
-/source/components/
-s3.conf
+
+# Composer directories.
 vendor/
 bin/
+
+# IDE and system config files.
+.idea/
+*.DS_Store

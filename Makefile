@@ -22,7 +22,7 @@ compass_clean:
 
 sculpin_prod:
 	# Build Sculpin itself
-	bin/sculpin generate --env=prod
+	vendor/bin/sculpin generate --env=prod
 
 build_dev: compass_dev sculpin_dev
 

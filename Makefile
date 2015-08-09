@@ -43,7 +43,7 @@ publish:
 	# all of them together into a single statement as far as the shell is concerned,
 	# because each statement runs in its own shell instance.
 	cd output_prod && \
-	git init && \`
+	git init && \
 	git config user.name '$(GIT_USER)' && \
 	git config user.email '$(GIT_EMAIL)' && \
 	git add . && \

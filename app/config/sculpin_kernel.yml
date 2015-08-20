@@ -5,7 +5,6 @@ sculpin:
     - "code/sass/"
     # @todo I don't know why the "*" is needed in this path to make the file
     # actually be excluded but it is.
-    - "code/config.rb*"
 sculpin_content_types:
     posts:
         permalink: blog/:year/:month/:day/:filename/

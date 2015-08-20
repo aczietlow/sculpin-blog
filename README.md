@@ -1,5 +1,14 @@
-Sculpin Blog Skeleton
-=====================
+#Zietlows Blog
+
+### Getting Started
+
+You should only need to do these steps once.
+
+* Run `composer install` to install Sculpin and its project dependencies.
+
+
+------
+
 
 A skeleton for a Sculpin based blog.
 

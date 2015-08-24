@@ -1,6 +1,6 @@
 # Require any additional compass plugins installed on your system.
 #require 'zen-grids'
-#require 'breakpoint'
+require 'breakpoint'
 
 # Set this to the root of your project when deployed:
 http_path = "source/"

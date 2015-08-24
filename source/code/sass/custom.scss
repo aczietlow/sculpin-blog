@@ -1,27 +1,34 @@
 // All sass changes in one place for easier scrutiny.
-.body {
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility; // What is this?
   -webkit-font-smoothing: antialiased; // What is this?
 }
 
-.heroimage {
-  height: 450px;
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://placehold.it/1920");
+  height: 400px;
   position: relative;
-  overflow: hidden;
-  background-color: #000;
-  .heroimage-image {
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    text-indent: -9999px;
-  }
+}
+
+.heroimage--portrait-thumbnail {
+  max-width: 150px;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  bottom: -35px;
+  border: 5px solid white;
+  border-radius: 20px;
 }
 
 header {

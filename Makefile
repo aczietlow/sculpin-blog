@@ -21,6 +21,7 @@ compass_clean:
 	bundle exec compass clean
 
 sculpin_prod:
+	pwd
 	# Build Sculpin itself
 	bin/sculpin generate --env=prod
 

@@ -6,7 +6,6 @@
         "components/jquery": "~1.9.1",
         "composer/composer": "@dev",
         "dflydev/embedded-composer-core": "@dev",
-        "drush/drush": "dev-master",
         "sculpin/sculpin": "~2.0"
     },
     "config": {

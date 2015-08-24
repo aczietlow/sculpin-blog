@@ -22,6 +22,8 @@ compass_clean:
 
 sculpin_prod:
 	pwd
+	ls -la
+	ls -la bin
 	# Build Sculpin itself
 	bin/sculpin generate --env=prod
 

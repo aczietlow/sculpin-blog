@@ -29,7 +29,8 @@ before_install:
 before_script:
 # Stop nokogiri from attempted to complile libxml2 for faster install times.
 - env NOKOGIRI_USE_SYSTEM_LIBRARIES=true bundle install
-- composer install --prefer-dist
+- composer self-update
+- composer install --dev --prefer-dist
 
 script:
 - make build

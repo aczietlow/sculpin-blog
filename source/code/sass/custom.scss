@@ -1,4 +1,8 @@
 // All sass changes in one place for easier scrutiny.
+
+// Import our font.
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
 img {
   max-width: 100%;
 }
@@ -10,7 +14,10 @@ img {
 body {
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased; // What is this?
+  -webkit-font-smoothing: antialiased;
+  font-family: Oswald,Arial,sans-serif;
+  font-size: 1.25em;
+  line-height: 1.53em;
 }
 
 .hero-image {
@@ -33,7 +40,7 @@ body {
 
 header {
   width: 100%;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto;
   position: relative;
   padding: 0;
@@ -42,3 +49,6 @@ header {
   box-sizing: border-box;
 }
 
+.blog-description {
+  font-size: 1.5em;
+}

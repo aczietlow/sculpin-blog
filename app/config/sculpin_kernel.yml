@@ -10,6 +10,7 @@ sculpin_content_types:
         type: path
         path: blogs/posts
         singular_name: blog
+        enabled: true
         permalink: blog/:title/
         taxonomies:
           - tags

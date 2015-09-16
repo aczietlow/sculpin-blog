@@ -31,9 +31,6 @@
     {% endblock %}
 </head>
 <body>
-<code>
-    <!--{{ dump(data.posts_tags) }}-->
-</code>
 <div class="page-content">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <div class="hero-image">
@@ -46,26 +43,17 @@
 
     <main class="content" role="main">
         <div class="row-fluid">
+            <!-- Spacing container -->
             <div class="span3"></div>
             <div class="span4">
                 {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
             </div>
             <div class="span2 sidebar">
-                <div class="well">
-                    <h4>{{ site.title }}{% if site.subtitle %}
-                        <small>{{ site.subtitle }}</small>
-                        {% endif %}
-                    </h4>
-
-                </div>
                 {{ include("blocks/tags.html") }}
             </div>
         </div>
     </main>
-    <footer class="container">
-        &copy; {{ "now"|date("Y") }} {{ site.title }}
-    </footer>
-
+    {{ include("includes/footer.html") }}
 </div>
 
 <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>

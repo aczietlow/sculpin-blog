@@ -1,7 +1,7 @@
 ---
 title: This is a draft!
 draft: true
-categories:
+tags:
     - features
 
 ---

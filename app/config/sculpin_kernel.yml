@@ -5,7 +5,7 @@ sculpin:
     - "code/sass/"
 sculpin_content_types:
     posts:
-        permalink: blog/:year/:month/:day/:filename/
+        enabled: false
     blogs:
         type: path
         path: blogs/posts

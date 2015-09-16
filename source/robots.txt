@@ -3,6 +3,6 @@ permalink: none
 ---
 
 User-agent: *
-Disallow: /blog/tags/
+Disallow: /blogs/tags/
 
 Sitemap: {{ site.url }}/sitemap.xml

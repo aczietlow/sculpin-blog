@@ -31,6 +31,9 @@
     {% endblock %}
 </head>
 <body>
+<code>
+    <!--{{ dump(data.posts_tags) }}-->
+</code>
 <div class="page-content">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <div class="hero-image">
@@ -55,20 +58,7 @@
                     </h4>
 
                 </div>
-                <div class="well sidebar-nav">
-                    <h4>Links</h4>
-                    <ul class="nav">
-                        {% if page.tags %}
-                        <p class="tags">
-                            Tags:
-                            {% for tag in page.tags %}
-                            <li><a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}</li>
-                            {% endfor %}
-                        </p>
-                        {% endif %}
-                        <li><a href="http://twitter.com/getsculpin">@getsculpin</a></li>
-                    </ul>
-                </div>
+                {{ include("blocks/tags.html") }}
             </div>
         </div>
     </main>
@@ -77,10 +67,6 @@
     </footer>
 
 </div>
-
-<pre>
-    {{ dump() }}
-</pre>
 
 <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>
 <script src="{{ site.url }}/components/bootstrap/js/bootstrap.min.js"></script>

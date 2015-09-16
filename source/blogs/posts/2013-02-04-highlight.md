@@ -1,7 +1,8 @@
 ---
 title: Syntax Highlighting
-categories:
+tags:
     - features
+    - foobarbaz
 
 ---
 You're all programmers, right? And you're writing code snippets on your Sculpin

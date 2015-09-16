@@ -3,12 +3,15 @@ layout: front
 title: Home
 generator: pagination
 pagination:
+    provider: data.blogs
     max_per_page: 3
 use:
     - posts
     - posts_tags
+    - blogs
+    - blogs_tags
 ---
-{% for post in page.pagination.items %}
+{% for blog in page.pagination.items %}
     <article>
         <header>
             <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>

@@ -3,11 +3,17 @@ sculpin:
   ignore:
     # Sass code doesn't need to be sent to the live server.
     - "code/sass/"
-    # @todo I don't know why the "*" is needed in this path to make the file
-    # actually be excluded but it is.
 sculpin_content_types:
     posts:
         permalink: blog/:year/:month/:day/:filename/
+    blogs:
+        type: path
+        path: blogs/posts
+        singular_name: blog
+        permalink: blog/:title/
+        taxonomies:
+          - tags
+
 #sculpin_twig:
   # Sculpin defaults to "_views" as the folder for templates. "code" is used
   # as a parent directory to separate templates/css/js etc from the "content".

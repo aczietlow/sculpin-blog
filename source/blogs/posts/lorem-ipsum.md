@@ -3,6 +3,8 @@ title: Lorem Ipsum
 date: 2012-11-27
 tags:
     - Lorem
+    - features
+    - drafts
     
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat congue

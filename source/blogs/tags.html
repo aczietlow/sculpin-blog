@@ -2,12 +2,17 @@
 layout: default
 title: Tags
 use:
-    - posts_tags
+    - blogs_tags
 ---
 <h2>Tags</h2>
 
+
+
 <div>
-{% for tag,posts in data.posts_tags %}
+{% for tag,blogs in data.blogs_tags %}
+    <pre><code>
+        {{ dump(blogs|length) }}
+    </code></pre>
 <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>
 {% endfor %}
 </div>

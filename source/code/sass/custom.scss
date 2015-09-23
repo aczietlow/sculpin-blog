@@ -36,18 +36,27 @@ body {
   bottom: -35px;
   border: 5px solid white;
   border-radius: 20px;
+
+  /* Large desktop */
+  @media (min-width: 1200px) {
+    left: 20%;
+  }
+
+  /* Regular desktop */
+  @media (min-width: 979px) and (max-width: 1200px) {
+    left: 15%;
+  }
+
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 979px) {
+    left: 10%;
+  }
 }
 
-//header {
-//  width: 100%;
-//  max-width: 640px;
-//  margin: 0 auto;
-//  position: relative;
-//  padding: 0;
-//  -webkit-box-sizing: border-box;
-//  -moz-box-sizing: border-box;
-//  box-sizing: border-box;
-//}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
 
 .blog-description {
   font-size: 1.0em;

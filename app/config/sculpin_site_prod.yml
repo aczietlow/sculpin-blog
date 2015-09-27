@@ -8,4 +8,4 @@ subtitle: Goes to 11!
 email: aczietlow@gmail.com
 
 # Sculpin loads assets with permalinks, thus we have to define the base url where the project lives.
-#url: http://aczietlow.github.io/sculpin-blog/
+url: http://aczietlow.github.io/sculpin-blog/

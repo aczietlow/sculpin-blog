@@ -1,9 +1,11 @@
-{% if page.url == '/' %}
+{% if page.url == '/' or page.url == '/about' %}
 <div class="hero-image">
     <img src="{{ site.url }}/assets/imgs/me.png" class="heroimage--portrait-thumbnail hidden-phone" alt="Zietlow">
 </div>
 {% endif %}
-
+<span class="home-button">
+    <a href="/"><i class="fa fa-home fa-3x"></i></a>
+</span>
 <header class="container">
     <div class="row">
         <div class="span6 offset2">

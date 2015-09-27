@@ -18,6 +18,9 @@ body {
   font-family: Oswald,Arial,sans-serif;
   font-size: 1.5em;
   line-height: 1.4em;
+  a:hover{
+    text-decoration: none;
+  }
 }
 
 .hero-image {
@@ -37,12 +40,12 @@ body {
   border: 5px solid white;
   border-radius: 20px;
 
-  /* Large desktop */
+  // Large desktop
   @media (min-width: 1200px) {
     left: 20%;
   }
 
-  /* Regular desktop */
+  // Regular desktop
   @media (min-width: 979px) and (max-width: 1200px) {
     left: 15%;
   }
@@ -53,9 +56,13 @@ body {
   }
 }
 
-// Large desktop
-@media (min-width: 1200px) {
-
+.home-button {
+  position: fixed;
+  left: 5%;
+  top: 5px;
+  a {
+    color: #333;
+  }
 }
 
 .blog-description {

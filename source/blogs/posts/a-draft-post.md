@@ -1,7 +1,8 @@
 ---
 title: This is a draft!
+date: 2012-12-14
 draft: true
-categories:
+tags:
     - features
 
 ---

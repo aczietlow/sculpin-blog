@@ -1,5 +1,5 @@
 ---
-use: ["posts"]
+use: ["blogs"]
 permalink: sitemap.xml
 ---
 <?xml version="1.0" encoding="UTF-8"?>
@@ -10,10 +10,10 @@ permalink: sitemap.xml
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-  {% for post in data.posts %}
+  {% for blog in data.blogs %}
   <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
-    <lastmod>{{ post.date|date('c') }}</lastmod>
+    <loc>{{ site.url }}{{ blog.url }}</loc>
+    <lastmod>{{ blog.date|date('c') }}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

@@ -1,0 +1,94 @@
+// All sass changes in one place for easier scrutiny.
+
+// Import our font.
+@import url(http://fonts.googleapis.com/css?family=Oswald:300);
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Oswald,Arial,sans-serif;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  background-image: url("http://placehold.it/1920");
+  height: 400px;
+  position: relative;
+}
+
+.heroimage--portrait-thumbnail {
+  max-width: 150px;
+  height: auto;
+  position: absolute;
+  left: 20%;
+  bottom: -35px;
+  border: 5px solid white;
+  border-radius: 20px;
+
+  // Large desktop
+  @media (min-width: 1200px) {
+    left: 20%;
+  }
+
+  // Regular desktop
+  @media (min-width: 979px) and (max-width: 1200px) {
+    left: 15%;
+  }
+
+  // Portrait tablet to landscape and desktop
+  @media (min-width: 768px) and (max-width: 979px) {
+    left: 10%;
+  }
+}
+
+.home-button {
+  position: fixed;
+  left: 5%;
+  top: 5px;
+  a {
+    color: #333;
+  }
+}
+
+.blog-description {
+  font-size: 1.0em;
+  font-weight: 400;
+  text-align: center;
+}
+
+li {
+  line-height: 30px;
+}
+
+header .title {
+  text-align: center;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu a{
+  text-decoration: none;
+}
+
+// Use adjacent selector in order to not include the first menu item.
+.menu a + a:before{
+  content: " | ";
+  padding: 0 10px;
+}

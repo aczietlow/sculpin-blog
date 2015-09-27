@@ -1,5 +1,27 @@
-Sculpin Blog Skeleton
-=====================
+#Zietlows Blog
+
+### Getting Started
+
+You should only need to do these steps once.
+
+* Run `composer install` to install Sculpin and its project dependencies.
+
+### How do I work on this?
+
+These steps will be taken every time you are working on the project.
+
+* Run `make generate` to start the Sculpin built-in web server. Your generated
+  site is now available at http://localhost:8000
+* Run `compass watch` to start the background compass process. You must do this
+  in a separate terminal window from the one that is running generate.
+* `make clean`: Deletes all generated CSS files and the output_dev and output_prod directories.
+* `make build`: Compiles all Sass files and Sculpin for "production mode".
+* `make build_dev`: Compiles all Sass files and Sculpin for "dev mode".
+* Although possible, do *not* run `make publish` as that will push your current code to live. Let
+the automated setup on Travis do that for you.
+
+------
+
 
 A skeleton for a Sculpin based blog.
 

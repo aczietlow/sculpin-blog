@@ -5,9 +5,10 @@ php:
 
 cache:
   bundler: true
-  directories:
-  - vendor
-  - $COMPOSER_CACHE_DIR
+  # Removing caching configuration until find a solution that doesn't fail as cache grows cold.
+#  directories:
+#  - vendor
+#  - $COMPOSER_CACHE_DIR
 
 # This is the travis-enrypted GitHub token for the Palantir-Travis GitHub user.
 env:
@@ -29,7 +30,8 @@ before_install:
 before_script:
 # Stop nokogiri from attempted to complile libxml2 for faster install times.
 - env NOKOGIRI_USE_SYSTEM_LIBRARIES=true bundle install
-- composer install --prefer-dist
+- composer self-update
+- composer install --dev --prefer-dist
 
 script:
 - make build

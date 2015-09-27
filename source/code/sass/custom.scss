@@ -83,12 +83,27 @@ header .title {
   text-align: center;
 }
 
-.menu a{
-  text-decoration: none;
+.menu {
+  h1 {
+    display: inherit;
+  }
 }
 
 // Use adjacent selector in order to not include the first menu item.
-.menu a + a:before{
+.menu span + span:before{
   content: " | ";
   padding: 0 10px;
+}
+
+.sub-menu {
+  text-align: center;
+
+  a + a:before {
+    content: " · ";
+    padding: 0 10px;
+  }
+}
+
+header.container {
+  padding-top: 20px;
 }

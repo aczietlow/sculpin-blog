@@ -16,3 +16,4 @@ style adjustments
 * Use more spacing between the footer content region
 * Blog page looks to plain
 * Increase contrast in the code styling regions
+* Fix home button positioning on mobile break points

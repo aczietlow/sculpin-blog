@@ -6,14 +6,16 @@
 
 
 style adjustments
-* Clear seperation between blog posts 
-    More spacing, possibly an HR
-* for header navigation 
-  blogs | Chris Zietlow | About
-  <icon> . <icon> . <icon>
 * Do something with the tags block
 * Posts layout should look more similar to the post style on the default layout used on the homepage
 * Use more spacing between the footer content region
 * Blog page looks to plain
 * Increase contrast in the code styling regions
 * Fix home button positioning on mobile break points
+* Add scroll to top button/link
+* Add favicon
+* Make block for drupal association badge & stuff
+
+
+* Update to bootstrap 3.0
+* Set header description to center off of page width instead of container.

@@ -47,13 +47,13 @@ body {
     left: 15%;
   }
 
-  /* Portrait tablet to landscape and desktop */
+  // Portrait tablet to landscape and desktop
   @media (min-width: 768px) and (max-width: 979px) {
     left: 10%;
   }
 }
 
-/* Large desktop */
+// Large desktop
 @media (min-width: 1200px) {
 
 }
@@ -70,4 +70,18 @@ li {
 
 header .title {
   text-align: center;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu a{
+  text-decoration: none;
+}
+
+// Use adjacent selector in order to not include the first menu item.
+.menu a + a:before{
+  content: " | ";
+  padding: 0 10px;
 }

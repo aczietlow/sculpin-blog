@@ -5,9 +5,10 @@ php:
 
 cache:
   bundler: true
-  directories:
-  - vendor
-  - $COMPOSER_CACHE_DIR
+  # Removing caching configuration until find a solution that doesn't fail as cache grows cold.
+#  directories:
+#  - vendor
+#  - $COMPOSER_CACHE_DIR
 
 # This is the travis-enrypted GitHub token for the Palantir-Travis GitHub user.
 env:

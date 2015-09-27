@@ -6,7 +6,6 @@
 
 
 style adjustments
-* Do something with the tags block
 * Posts layout should look more similar to the post style on the default layout used on the homepage
 * Use more spacing between the footer content region
 * Blog page looks to plain
@@ -19,3 +18,7 @@ style adjustments
 
 * Update to bootstrap 3.0
 * Set header description to center off of page width instead of container.
+* Use tagCloud sculpin plugin
+  * https://github.com/jbouzekri/SculpinTagCloudBundle
+  * Get to work with non posts content types
+    * Possibly open an issue

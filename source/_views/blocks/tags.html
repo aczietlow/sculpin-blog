@@ -3,7 +3,7 @@
         <h4>Tags</h4>
         <ul class="nav">
             {% for tag,blogs in data.blogs_tags %}
-            <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }} ({{ blogs|length }})</a>
+            <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }} [{{ blogs|length }}], </a>
             {% endfor %}
         </ul>
     </div>

@@ -23,10 +23,15 @@ body {
   }
 }
 
+.nav {
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .hero-image {
   background-size: cover;
   background-position: center;
-  background-image: url("http://placehold.it/1920");
+  background-image: url("");
   height: 400px;
   position: relative;
 }

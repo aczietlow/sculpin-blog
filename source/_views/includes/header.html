@@ -1,5 +1,5 @@
 {% if page.url == '/' or page.url == '/about' %}
-<div class="hero-image">
+<div class="hero-image" style="background-image: url('{{ site.url }}/assets/imgs/hero_image.jpg')">
     <img src="{{ site.url }}/assets/imgs/me.png" class="heroimage--portrait-thumbnail hidden-phone" alt="Zietlow">
 </div>
 {% endif %}
@@ -8,7 +8,7 @@
 </span>
 <header class="container">
     <div class="row">
-        <div class="span6 offset2">
+        <div class="span6 offset3">
                 <div class="menu">
                     <span><a href="{{ site.url }}/blog">Blogs</a></span>
                     <span><h1 class="title">Chris Zietlow</h1></span>

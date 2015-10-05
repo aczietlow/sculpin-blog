@@ -8,7 +8,7 @@
 style adjustments
 * Posts layout should look more similar to the post style on the default layout used on the homepage
 * Use more spacing between the footer content region
-* Blog page looks to plain
+* ~~Blog page looks to plain~~
 * Increase contrast in the code styling regions
 * Fix home button positioning on mobile break points
 * Add scroll to top button/link
@@ -16,6 +16,7 @@ style adjustments
 * Make block for drupal association badge & stuff
 
 
+Post mvp
 * Update to bootstrap 3.0
 * Set header description to center off of page width instead of container.
 * Use tagCloud sculpin plugin

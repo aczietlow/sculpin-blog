@@ -11,7 +11,6 @@
         </header>
         {% if page.tags %}
         <p class="tags">
-            Tags:
             {% for tag in page.tags %}
             <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}

@@ -36,6 +36,24 @@ You can use either `~` or <code>`</code> to mark them.
 [fcb]: http://michelf.ca/projects/php-markdown/extra/#fenced-code-blocks
 
 ~~~php
+/**
+ * Awesome Contrived Example.
+ */
+class Bar implements BarInterface
+    {
+        private $baz;
+
+        public function __construct(BazInterface $baz)
+        {
+            $this->baz = $baz;
+        }
+
+        public function doIt()
+        {
+            return $this->baz->do('it');
+        }
+    }
+         
 if ($fencedCodeBlock->syntax !== 'PHP') {
     throw new UnexpectedValueException("wat");
 }

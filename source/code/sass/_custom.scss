@@ -1,0 +1,142 @@
+// All sass changes in one place for easier scrutiny.
+
+// Import our font.
+@import url(http://fonts.googleapis.com/css?family=Oswald:300);
+
+img {
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Oswald,Arial,sans-serif;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.nav {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.hero-image {
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  position: relative;
+}
+
+.heroimage--portrait-thumbnail {
+  display: none;
+
+  @include breakpoint($tablet) {
+    max-width: 150px;
+    height: auto;
+    position: absolute;
+    bottom: -35px;
+    left: 10%;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: block;
+  }
+
+  @include breakpoint($desktop) {
+    left: 15%;
+  }
+
+  @include breakpoint($desktopXl) {
+    left: 20%;
+  }
+}
+
+.home-button {
+  display: none;
+
+  @include breakpoint($tablet) {
+    position: fixed;
+    left: 3%;
+    top: 3%;
+    a {
+      color: #333;
+    }
+    display: block;
+  }
+}
+
+.blog-description {
+  font-size: 1em;
+  font-weight: 400;
+  text-align: center;
+}
+
+li {
+  line-height: 30px;
+}
+
+header .title {
+  text-align: center;
+}
+
+.menu {
+  text-align: center;
+}
+
+.menu {
+  h1 {
+    display: inline;
+  }
+}
+
+// Use adjacent selector in order to not include the first menu item.
+.menu span + span:before{
+  content: " | ";
+  padding: 0 10px;
+}
+
+.sub-menu {
+  text-align: center;
+
+  a + a:before {
+    content: " · ";
+    padding: 0 10px;
+  }
+}
+
+header.container {
+  padding-top: 20px;
+}
+
+main article {
+  margin-bottom: 70px;
+}
+
+pre {
+  background-color: #f8f8f8;
+}
+
+pre code {
+  color: #000;
+
+  .javadoc,
+  .comment {
+    color: #629755;
+    font-weight: bold;
+  }
+
+  .class .keyword {
+    color: #CC7832;
+  }
+
+  .keyword {
+    color: #9876AA;
+  }
+}

@@ -36,27 +36,25 @@ body {
 }
 
 .heroimage--portrait-thumbnail {
-  max-width: 150px;
-  height: auto;
-  position: absolute;
-  left: 20%;
-  bottom: -35px;
-  border: 5px solid white;
-  border-radius: 20px;
+  display: none;
 
-  // Large desktop
-  @media (min-width: 1200px) {
-    left: 20%;
+  @include breakpoint($tablet) {
+    max-width: 150px;
+    height: auto;
+    position: absolute;
+    bottom: -35px;
+    left: 10%;
+    border: 5px solid white;
+    border-radius: 20px;
+    display: block;
   }
 
-  // Regular desktop
-  @media (min-width: 979px) and (max-width: 1200px) {
+  @include breakpoint($desktop) {
     left: 15%;
   }
 
-  // Portrait tablet to landscape and desktop
-  @media (min-width: 768px) and (max-width: 979px) {
-    left: 10%;
+  @include breakpoint($desktopXl) {
+    left: 20%;
   }
 }
 

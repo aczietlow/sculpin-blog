@@ -59,19 +59,21 @@ body {
 }
 
 .home-button {
-  position: fixed;
-  left: 3%;
-  top: 3%;
-  a {
-    color: #333;
-  }
-  @media (max-width: 768px) {
-    display: none;
+  display: none;
+
+  @include breakpoint($tablet) {
+    position: fixed;
+    left: 3%;
+    top: 3%;
+    a {
+      color: #333;
+    }
+    display: block;
   }
 }
 
 .blog-description {
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: 400;
   text-align: center;
 }
@@ -90,7 +92,7 @@ header .title {
 
 .menu {
   h1 {
-    display: inherit;
+    display: inline;
   }
 }
 
@@ -123,10 +125,13 @@ pre {
 
 pre code {
   color: #000;
-  .javadoc, .comment {
+
+  .javadoc,
+  .comment {
     color: #629755;
     font-weight: bold;
   }
+
   .class .keyword {
     color: #CC7832;
   }

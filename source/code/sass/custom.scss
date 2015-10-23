@@ -116,3 +116,22 @@ header.container {
 main article {
   margin-bottom: 70px;
 }
+
+pre {
+  background-color: #f8f8f8;
+}
+
+pre code {
+  color: #000;
+  .javadoc, .comment {
+    color: #629755;
+    font-weight: bold;
+  }
+  .class .keyword {
+    color: #CC7832;
+  }
+
+  .keyword {
+    color: #9876AA;
+  }
+}

@@ -68,6 +68,9 @@ body {
   a {
     color: #333;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .blog-description {

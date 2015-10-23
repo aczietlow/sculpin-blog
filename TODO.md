@@ -14,3 +14,9 @@ Post mvp
     * Possibly open an issue
 * Make block for drupal association badge & stuff
 * Add scroll to top button/link
+
+
+Walk through
+* change style of tags on posts, adjust spacing to have tags and title together
+* footer is off center
+* page padding on mobile 1 col layout

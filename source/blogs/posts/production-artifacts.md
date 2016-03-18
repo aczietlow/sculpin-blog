@@ -40,7 +40,7 @@ Behat, automation, automated testing, and BDD (behavior driven development) are 
 
 #### The benefits
 
-I feel at the end of the day the code in the project repo should be supportive of development. It should include all of the tools, and code the team actively developing the project needs to successfully write code, and the drupal docroot is not part of that. The Drupal docroot is something that can be assembled from dependencies and deployed to the client servers as a production artifact. Think of the Drupal docroot as compiled code, like an executable jar file.
+At the end of the day the code in the project repo should be supportive of development. It should include all of the tools, and code the team actively developing the project needs to successfully write code, and the Drupal docroot is not part of that. The Drupal docroot is something that can be assembled from dependencies and deployed to the client servers as a production artifact. Think of the Drupal docroot as compiled code, like an executable jar file. 
 
 An explicit build process in Drupal means defining what the project dependencies are (modules, themes, libraries, etc) and having a process to build Drupal in some known state. 
 

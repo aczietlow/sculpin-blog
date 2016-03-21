@@ -6,7 +6,9 @@ tags:
     - automated workflow
 
 ---
-Behat, automation, automated testing, and BDD (behavior driven development) are all part of a movement within the Drupal community that is gaining momentum as clients and teams start to realize the benefits these can have on their product. Having a explicit, repeatable build process if one of the pillars of having a successful automated testing and deployment workflow. In a workflow where dependencies are defined, possibly with composer or drush make files, its no longer a requirement to place the drupal root, and contrib projects into version control. Adding in all of the tools for testing, development, and building along with removing the drupal project and contrib projects from git project root starts to radically restructure what a project root will look like. This approach brings many benefits such as automated tests, more reliable test results from testing Drupal in a known state, ease of local development but comes with a unique challenge. If there are tons of new code in the repo and the Drupal docroot is no longer part of the repo, what gets deployed to the production servers, and how is are deployments accomplished.
+Behat, devops, automated testing, and BDD (behavior driven development) are all part of a movement within the Drupal community that is gaining momentum as clients and agencies start to realize the benefits these can have on their product. Tests are most effective when the software they are testing can be placed into a known state. In a workflow where dependencies are defined (composer) it's no longer a requirement to place the drupal root, and contrib projects into version control. With contrib projects managed with composer and build scripts tracked in version control we don't need to have Drupal or contrib projects committed in the repositories.
+ 
+If there are tons of new code in the repo and the Drupal docroot is no longer part of the repo, how does the Drupal site get deployed to production servers? 
 
     # A traditional Drupal 7 project root
 
@@ -21,6 +23,7 @@ Behat, automation, automated testing, and BDD (behavior driven development) are 
     - ...
     - .git/
 <br>
+    
     # A Drupal 7 project root configured for testing and automation
     
     - bin/ - executables added from composer e.g. Behat

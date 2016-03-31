@@ -37,7 +37,7 @@ For all of Drupal 6's lifespan and most Drupal 7's a typical project would like 
     - web.config
     - xmlrpc.php
    
-There has been a strong push the last few years to ["get off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) and have more synergy with other PHP projects. With these efforts Drupal has seen more and more 3rd party tools to enhance the development process of building a site. Tools like Behat, composer, vagrant are becoming more and more common while developing a Drupal site. A Drupal 7 project that includes some of these tools might look closer to this:
+There has been a strong push the last few years to ["get off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) and have more synergy with other PHP projects. With these efforts Drupal has seen more and more 3rd party tools to enhance the development process of building a site. Tools like build scripts, Behat, composer, vagrant are becoming more and more common while developing a Drupal site. A Drupal 7 project that includes some of these tools might look closer to this:
 
     - bin/ - executables added from composer e.g. Behat
     - build/ - build scripts
@@ -53,17 +53,55 @@ There has been a strong push the last few years to ["get off the island"](http:/
     - behat.yml - Behat test suite config file
     - Vagrantfile - Virtualization config file
     - composer.json - dependency management file
+  
+#### The Benefits
 
+At the end of the day the code in the project repo should be supportive of development. Code deployed to production should be the product being built. The project repo should include all of the tools, and code the team actively developing the project needs to successfully write code, and the Drupal docroot is not part of that. The Drupal docroot is something that can be assembled from dependencies using a build process and deployed to the client servers as a production artifact. Think of the Drupal docroot as compiled code, like an executable jar file, or how sass compiles into CSS. 
 
-#### The benefits
+Projects should be structured to support development and the final product should be the only thing that is delivered to production for the client.
 
-At the end of the day the code in the project repo should be supportive of development. It should include all of the tools, and code the team actively developing the project needs to successfully write code, and the Drupal docroot is not part of that. The Drupal docroot is something that can be assembled from dependencies and deployed to the client servers as a production artifact. Think of the Drupal docroot as compiled code, like an executable jar file. 
+#### The Challenges 
 
-An explicit build process in Drupal means defining what the project dependencies are (modules, themes, libraries, etc) and having a process to build Drupal in some known state. 
+Some web hosts have their own opinions on git projects roots should be setup. Pantheon uses the Drupal root as the project root, while acquia places drupal within a `drupalroot` directory.
 
-#### The challenges 
+    # Pantheon
+    
+    - includes/
+    - misc/
+    - modules/
+    - profiles/
+    - scripts/
+    - sites/
+    - themes/
+    - CHANGELOG.txt
+    - COPYRIGHT.txt
+    - index.php
+    - INSTALL.mysql.txt
+    - INSTALL.pgsql.txt
+    - install.php
+    - INSTALL.sqlite.txt
+    - INSTALL.txt
+    - LICENSE.txt
+    - MAINTAINERS.txt
+    - README.txt
+    - UPGRADE.txt
+    - authorize.php
+    - cron.php
+    - index.php
+    - README.txt
+    - robots.txt
+    - update.php
+    - UPGRADE.txt
+    - web.config
+    - xmlrpc.php
 
-...
+    # Acquia
+    
+    - acquia-utils/
+    - docroot/
+    - README.acquia
+    
+
 
 ----
 ### Internal Notes
@@ -78,7 +116,7 @@ Rethink how git repos are organized and code is deployed.
 ### Problems production artifacts solve
 
 * Prevents dev tools from being deployed to production environments
-* Allows introduction development tooling while still supporting hosting with opinionated hosts (Acquia and Pantheon)
+* Allows introduction of development tooling while still supporting hosting with opinionated hosts (Acquia and Pantheon)
 * You should have a build process (composer, drush make, bash, phping, etc) to put Drupal into a known state
   * Keeps production settings separate from development settings
 * Allows code repos to be structured to support development workflow (across multiple projects) rather than be dictated by host environment

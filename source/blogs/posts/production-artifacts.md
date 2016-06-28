@@ -1,12 +1,12 @@
 ---
-title: Production Artifacts
+title: Stop committing Drupal Core and let composer do its job
 date: 2016-03-17
 tags:
     - devops
     - automated workflow
 
 ---
-For all of Drupal 6's lifespan and most Drupal 7's a typical project would like similar to this:
+For all of Drupal 6's lifespan and most Drupal 7's a typical project repo would like similar to this:
 
     - includes/
     - misc/
@@ -36,8 +36,23 @@ For all of Drupal 6's lifespan and most Drupal 7's a typical project would like 
     - UPGRADE.txt
     - web.config
     - xmlrpc.php
+ 
+ Assuming this a typical project and it's using version control, that is a lot of 3rd party contributed code being managed by the repo. This is a common git project root just for managing a theme, a few custom modules, and dependencies (Yes Drupal Core is a dependency). For a while everyone accepted this because tools to manage 3rd party code was not available or didn't work well. That has since changed.
    
-There has been a strong push the last few years to ["get off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) and have more synergy with other PHP projects. With these efforts Drupal has seen more and more 3rd party tools to enhance the development process of building a site. Tools like build scripts, Behat, composer, vagrant are becoming more and more common while developing a Drupal site. A Drupal 7 project that includes some of these tools might look closer to this:
+There has been a strong push the last few years to ["get off the island"](http://www.garfieldtech.com/blog/off-the-island-2013) and have more synergy with other PHP projects. With these efforts Drupal has seen more and more 3rd party tools to enhance the development process of building a site. Tools like build scripts, Behat, composer, vagrant, docker, gulp, grunt, and more are becoming more common while developing a Drupal site. Each of these tools contain config files, required libraries, and code. Cramming this into you Drupal docroot can be extremely unintuitive and unorganized. Additional complications can arise when the git repo has to be structured differently for each host provider that you may use. e.g. Acquia, Pantheon, Platform.sh, or even an in-house solution.
+
+Projects should be organized the in way that works best for the development team and contains the tools they need most, instead of allowing the host provider to dictate project structure. A Drupal project that includes some of these tools might look closer to this:
+
+    - build/ - build scripts
+    - cnf/ - project specific configuration
+    - src/ - Contains custom modules and themes.
+    - tests/ - catch all for unit tests, Behat tests, accessibility tests, or simple tests
+    - .travis.yml - CI server config file
+    - behat.yml - Behat test suite config file
+    - Vagrantfile - Virtualization config file
+    - composer.json - dependency management file
+    
+But wait, where's the Drupal docroot? Drupal core, and all the contributed modules are explicitly declared by composer.    
 
     - bin/ - executables added from composer e.g. Behat
     - build/ - build scripts

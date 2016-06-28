@@ -1,4 +1,5 @@
 {
+    "minimum-stability": "alpha",
     "require": {
 	"dflydev/embedded-composer-console": "@dev",
         "components/bootstrap": "~2.3.1",

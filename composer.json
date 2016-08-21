@@ -1,18 +1,25 @@
 {
+    "name": "zietlow/sculpin-blog",
+    "description": "Sculpin blog for funzies",
+    "type": "project",
+    "authors": [
+        {
+            "name": "chris.zietlow",
+            "email": "aczietlow@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
-	"dflydev/embedded-composer-console": "@dev",
         "components/bootstrap": "~2.3.1",
         "components/highlightjs": "~7.3.0",
         "components/jquery": "~1.9.1",
         "composer/composer": "@dev",
-        "dflydev/embedded-composer-core": "@dev",
-        "sculpin/sculpin": "~2.0"
+        "sculpin/sculpin": "dev-master"
     },
     "config": {
         "bin-dir": "bin",
         "component-dir": "source/components",
         "process-timeout": 1200
     }
-
 }
 

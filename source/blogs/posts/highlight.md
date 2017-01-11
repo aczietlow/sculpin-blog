@@ -1,6 +1,7 @@
 ---
 title: Syntax Highlighting
 date: 2013-02-04
+draft: true
 tags:
     - features
     - foobarbaz

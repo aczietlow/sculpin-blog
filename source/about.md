@@ -3,6 +3,6 @@ layout: default
 title: About
 
 ---
-# About the Author or Blog
+# Quick about me
 
-Here is a little information about the author or the blog.
+I enjoy a good candle lit dinner, long walks on the beach, and diving head first into interesting code. I believe the oxford comma isn't optional and that there's a special place in hell for people that don't rinse ketchup off of their plates.

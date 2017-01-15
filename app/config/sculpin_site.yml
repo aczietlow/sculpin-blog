@@ -9,3 +9,7 @@ email: aczietlow@gmail.com
 
 # Sculpin loads assets with permalinks, thus we have to define the base url where the project lives.
 url: http://localhost:8000
+
+# Insert your disqus shortname
+disqus:
+    shortname: zietlow

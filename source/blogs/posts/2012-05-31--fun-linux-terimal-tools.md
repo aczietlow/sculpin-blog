@@ -1,6 +1,7 @@
 ---
 title: Fun linux Terminal Tools
 date: 2012-05-31
+draft: true
 tags:
     - linux
 ---

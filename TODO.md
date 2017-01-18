@@ -14,6 +14,8 @@ Post mvp
     * Possibly open an issue
 * Make block for drupal association badge & stuff
 * Add scroll to top button/link
+* Add a toggle night mode (use dracula theme)
+* Add title attribute to links
 
 
 Walk through

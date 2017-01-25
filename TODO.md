@@ -17,6 +17,7 @@ Post mvp
 * Add a toggle night mode (use dracula theme)
 * Add title attribute to links
 * Add metatags
+* Automate tweets about new blog posts
 
 
 Walk through

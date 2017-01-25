@@ -8,8 +8,10 @@ subtitle: Goes to 11!
 email: aczietlow@gmail.com
 
 # Sculpin loads assets with permalinks, thus we have to define the base url where the project lives.
-url: http://aczietlow.github.io/sculpin-blog
+url: http://zietlow.ninja
 
 # Insert your disqus shortname
 disqus:
     shortname: zietlow
+
+google_analytics_tracking_id: UA-90881724-1

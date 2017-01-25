@@ -16,6 +16,7 @@ Post mvp
 * Add scroll to top button/link
 * Add a toggle night mode (use dracula theme)
 * Add title attribute to links
+* Add metatags
 
 
 Walk through

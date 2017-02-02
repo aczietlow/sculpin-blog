@@ -17,6 +17,11 @@
         </p>
         {% endif %}
         <div>
+            {% if page.featured_image %}
+            <div class="center">
+                <img src="/assets/imgs/{{ page.featured_image }}" alt=""/>
+            </div>
+            {% endif %}
             {{ page.blocks.content|raw }}
         </div>
 

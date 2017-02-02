@@ -24,6 +24,11 @@ use:
         </span>
         {% endif %}
         <div>
+          {% if blog.meta.featured_image %}
+          <div class="center">
+            <img src="/assets/imgs/{{ blog.meta.featured_image }}" alt=""/>
+          </div>
+          {% endif %}
             {{ blog.blocks.content|raw }}
         </div>
     </article>

@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}{{ page.title }}{% endblock %} &mdash; {{ site.title }} &mdash; {{ site.subtitle }}</title>
-    <meta charset="utf-8">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block head_meta %}
-    <!--<meta name="robots" content="noindex, follow">-->
-    {% endblock %}
-    <link rel="stylesheet" href="{{ site.url }}/components/highlightjs/styles/github.css"/>
-    <link href="{{ site.url }}/components/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{ site.url }}/components/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
-    <link href="{{ site.url }}/code/css/styles.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="alternate" type="application/atom+xml" href="{{ site.url }}/atom.xml"
-          title="{{ site.title }} activity feed"/>
-    <style>
-        /** quick fix because bootstrap <pre> has a background-color. */
-        pre code {
-            background-color: inherit;
-        }
-    </style>
-    {% block head_styles %}
-    {% endblock %}
-    {% block head_scripts %}
-    {% endblock %}
+    {% include "head" %}
 </head>
 <body>
 <div class="page-content">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    {{ include("includes/header.html") }}
+    {% include "header" %}
 
     <main class="content" role="main">
         <div class="row-fluid">
@@ -47,7 +19,7 @@
             </div>
         </div>
     </main>
-    {{ include("includes/footer.html") }}
+    {% include "footer" %}
 </div>
 
 <script>window.jQuery || document.write('<script src="{{ site.url }}/components/jquery/jquery.min.js"><\/script>')</script>

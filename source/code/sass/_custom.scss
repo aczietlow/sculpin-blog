@@ -3,6 +3,11 @@
 // Import our font.
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
 
+// quick fix because bootstrap2 <pre> has a background-color.
+pre code {
+  background-color: inherit;
+}
+
 img {
   max-width: 100%;
 }

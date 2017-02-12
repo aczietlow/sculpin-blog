@@ -14,11 +14,3 @@ sculpin_content_types:
         permalink: blog/:title/
         taxonomies:
           - tags
-
-#sculpin_twig:
-  # Sculpin defaults to "_views" as the folder for templates. "code" is used
-  # as a parent directory to separate templates/css/js etc from the "content".
-  # In a more complex site, the "code" and "content" folders might even be
-  # separate git submodules.
- # source_view_paths:
- #   - "code/_views"

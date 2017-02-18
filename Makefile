@@ -17,6 +17,9 @@ compass_prod: compass_clean
 	# Build Sass/Compass - Tweak this to do CSS compression, too.
 	bundle exec compass compile
 
+compass_watch:
+	bundle exec compass watch
+
 compass_clean:
 	bundle exec compass clean
 

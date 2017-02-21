@@ -1,7 +1,31 @@
 // All sass changes in one place for easier scrutiny.
 
 // Import our font.
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400);
 @import url(http://fonts.googleapis.com/css?family=Oswald:300);
+
+html {
+  font-size: 18px;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.05rem;
+  font-family: Source Sans Pro,Oswald,sans-serif;
+  font-weight: normal;
+  line-height: 1.5em;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+// quick fix because bootstrap2 <pre> has a background-color.
+pre code {
+  background-color: inherit;
+}
 
 img {
   max-width: 100%;
@@ -11,16 +35,29 @@ img {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: Oswald,Arial,sans-serif;
-  font-size: 1.2em;
-  line-height: 1.4em;
-  a:hover{
-    text-decoration: none;
+.home-button {
+  display: none;
+
+
+
+  @include breakpoint($tablet) {
+    font-size: 1.1rem;
+    position: fixed;
+    left: 3%;
+    top: 3%;
+    a {
+      color: #333;
+    }
+    display: block;
   }
+
+  @include breakpoint($desktop) {
+    font-size: 1.5rem;
+  }
+}
+
+.sub-menu .fa {
+  font-size: 1.6rem;
 }
 
 .page-content {
@@ -38,8 +75,8 @@ body {
 }
 
 .nav {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: .9rem;
+  line-height: 1.3em;
 }
 
 .hero-image {
@@ -69,20 +106,6 @@ body {
 
   @include breakpoint($desktopXl) {
     left: 20%;
-  }
-}
-
-.home-button {
-  display: none;
-
-  @include breakpoint($tablet) {
-    position: fixed;
-    left: 3%;
-    top: 3%;
-    a {
-      color: #333;
-    }
-    display: block;
   }
 }
 

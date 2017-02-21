@@ -35,8 +35,29 @@ img {
   box-sizing: border-box;
 }
 
+.home-button {
+  display: none;
+
+
+
+  @include breakpoint($tablet) {
+    font-size: 1.1rem;
+    position: fixed;
+    left: 3%;
+    top: 3%;
+    a {
+      color: #333;
+    }
+    display: block;
+  }
+
+  @include breakpoint($desktop) {
+    font-size: 1.5rem;
+  }
+}
+
 .sub-menu .fa {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
 }
 
 .page-content {
@@ -54,8 +75,8 @@ img {
 }
 
 .nav {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: .9rem;
+  line-height: 1.3em;
 }
 
 .hero-image {
@@ -85,20 +106,6 @@ img {
 
   @include breakpoint($desktopXl) {
     left: 20%;
-  }
-}
-
-.home-button {
-  display: none;
-
-  @include breakpoint($tablet) {
-    position: fixed;
-    left: 3%;
-    top: 3%;
-    a {
-      color: #333;
-    }
-    display: block;
   }
 }
 

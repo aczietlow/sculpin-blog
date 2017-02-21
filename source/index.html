@@ -26,10 +26,10 @@ use:
         <div>
           {% if blog.meta.featured_image %}
           <div class="center">
-            <img src="/assets/imgs/{{ blog.meta.featured_image }}" alt=""/>
+            <img src="/assets/imgs/{{ blog.meta.featured_image.image }}" alt="{{ blog.meta.featured_image.alt }}"/>
           </div>
           {% endif %}
-            {{ blog.blocks.content|raw }}
+          {{ blog.blocks.content|raw }}
         </div>
     </article>
 {% endfor %}

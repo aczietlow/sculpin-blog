@@ -12,14 +12,14 @@
         {% if page.tags %}
         <p class="tags">
             {% for tag in page.tags %}
-            <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                <a href="{{ site.url }}/blogs/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
         </p>
         {% endif %}
         <div>
             {% if page.featured_image %}
             <div class="center">
-                <img src="/assets/imgs/{{ page.featured_image }}" alt=""/>
+                <img src="/assets/imgs/{{ page.featured_image.image }}" alt="{{ page.featured_image.alt }}"/>
             </div>
             {% endif %}
             {{ page.blocks.content|raw }}

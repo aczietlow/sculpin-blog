@@ -1,12 +1,8 @@
-* travis, fix composer cache issue on travis.
-* Update build tools to be more inline with what I'm comfortable with.
-* Update README.md
+Bugs
+* footer is off center
+* Fix issue causing horizontal scroll bar
 
-
-style adjustments
-
-Post mvp
-* Set header description to center off of page width instead of container.
+Backlog
 * Use tagCloud sculpin plugin
   * https://github.com/jbouzekri/SculpinTagCloudBundle
   * Get to work with non posts content types
@@ -16,7 +12,7 @@ Post mvp
 * Add title attribute to links
 * Add metatags
 * Automate tweets about new blog posts
-
-
-Walk through
-* footer is off center
+* Add PALLY tests to travis build process
+* Test for semantic and syntactically correct
+* Update build tools to be more inline with my opinions.
+* Update README.md

@@ -10,7 +10,7 @@ featured_image:
     alt: Meet Jackson, the Sculpin mascot   
 ---
 
-Sculpin a static PHP based static site generator. Static site generators are great for static content that doesn’t need to be updated by multiple users on a regular basis. They can remove much of the complexity that comes with a CMS as well as a need for server side technologies like PHP and a Mysql server. So it’s great for my personal blog, but not ideal from a large news organization that has much more dynamic content. Sculpin also has the advantage of being written in a language I’m already familiar with. Some of the standout features of Sculpin include:
+Sculpin is a PHP based static site generator. And WTF are static site genertors? They are great for content that doesn’t need to be updated by multiple users on a regular basis i.e. a static website. They can remove much of the complexity that comes with a CMS as well as a need for server side technologies like PHP or a datbase server. It’s great for my personal blog, but not ideal from a large news organization that has much more dynamic content. Sculpin also has the advantage of being written in a language I’m already familiar with. Some of the standout features of Sculpin include:
 * Writing content on markdown
 * Twig based templating
 * Extremely fast

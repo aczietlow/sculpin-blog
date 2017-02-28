@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% include "head" %}
+  {% include "head" %}
 </head>
 <body id="body">
-    <div class="page-content">
-        {% include "header" %}
-        <main class="content" role="main">
-            <div class="col-md-6 col-md-offset-2">
-                {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
-            </div>
-            <div class="col-md-2">
-                {% include "side_bar" %}
-            </div>
-        </main>
-        {% include "footer" %}
+{% include "header" %}
+<div class="container-fluid">
+  <main class="content" role="main">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-2">
+        {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+      </div>
+      <div class="col-md-2">
+        {% include "side_bar" %}
+      </div>
     </div>
-    {% include "scripts" %}
+  </main>
+  {% include "footer" %}
+</div>
+{% include "scripts" %}
 </body>
 </html>

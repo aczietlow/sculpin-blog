@@ -60,20 +60,6 @@ img {
   font-size: 1.6rem;
 }
 
-.page-content {
-  margin-left: 10px;
-  margin-right: 8px;
-
-  @include breakpoint($mobile) {
-    margin-left: 15px;
-    margin-right: 12px;
-  }
-
-  @include breakpoint($tablet) {
-    margin: 0;
-  }
-}
-
 .nav {
   font-size: .9rem;
   line-height: 1.3em;

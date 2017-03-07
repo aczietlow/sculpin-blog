@@ -10,7 +10,7 @@ featured_image:
     alt: Meet Jackson, the Sculpin mascot 
 ---
 
-Sculpin is a static site generator written in PHP. And WTF is a static site genertor? It is a great tool for content that doesn’t need to be updated by multiple users on a regular basis, authentication, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS, as well as the need for server side technologies like PHP or a database server. Static site generator is great for my personal blog or the local astronomy group site, but not ideal from a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
+Sculpin is a static site generator written in PHP. And WTF is a static site genertor? It is a great tool for content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS, as well as the need for server side technologies like PHP or a database server. Static site generator is great for my personal blog or the local astronomy group site, but not ideal from a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
 
 * Writing content in markdown
 * TWIG templating
@@ -19,7 +19,7 @@ Sculpin is a static site generator written in PHP. And WTF is a static site gene
 * Secure (everything is client side)
 * Easily deployable (Can host static sites from github for free)
 
-When designing my blog I was looking for the path of least resistance for sharing some code snippets and jotting down a few of my opinions to share with the Interwebs. For someone that is already familiar with PHP Sculpin is the perfect tool to accomplish exactly this. How does one Sculpin?
+When designing my blog I was looking for the path of least resistance for sharing some code snippets and jotting down a few of my opinions to share with the Interwebs. For someone that is already familiar with PHP, Sculpin is the perfect tool to accomplish exactly this. How does one Sculpin?
 ``
 ## Installing Sculpin
 
@@ -45,11 +45,11 @@ Navigate to http://localhost:8000. BAM! You now have a boiler plate Sculpin site
 
 Magic! Okay maybe not magic. Sculpin comes with an executable bin, that we're running to parse all of the Twig templates, html, and markdown sources it can find to generate static html pages.
 
-The `--watch` simply tells Sculpin to watch for any file changes in order to rewrite any necessary HTML files. The `--server` launches PHP's built in web server which allows you to see your work in progress. The fact I don't need a working web server to get started makes it even easier to start creating content.
+`--watch` tells Sculpin to watch for file changes in order to rewrite necessary HTML files. `--server` launches PHP's built in web server which allows you to see your work in progress. The fact that I don't need a working web server to get started makes it even easier to skip to the part where I can begin writing content.
 
 ## Creating Content in Sculpin
 
-Sculpin uses a markdown converter [michelf/php-markdown](https://github.com/michelf/php-markdown) for taking the blog content written in markdown and converting it to html. That means once the Twig templates and theme is in place, new content can be as simple as dropping a new markdown file into the code base. Luckily the starter kit comes with a working layout and theme, so we can get jump start to creating content.
+Sculpin uses a markdown converter [michelf/php-markdown](https://github.com/michelf/php-markdown) for taking the blog content written in markdown and converting it to html. That means once the Twig templates and theme are in place, adding new content can be as simple as dropping a new markdown file into the code base. Luckily the starter kit comes with a working layout and theme, so we can get jump start to creating content.
 
 By default Sculpin will look for blog post content or **source objects** in each file under the `/source' directory. All content posts can be written in markdown which Sculpin with convert into html.
 
@@ -71,7 +71,7 @@ By default Sculpin will look for blog post content or **source objects** in each
  1. Step 3: Profit
  
  * Moon Knight
- * Scarlet Which
+ * Scarlet Witch
  * Gambit
  * Hope Summers
 ```
@@ -94,6 +94,7 @@ By default Sculpin will look for blog post content or **source objects** in each
  
 * Moon Knight
 * Scarlet Which
+* Gambit
 * Hope Summers
 
 ## Syntax Highlighting
@@ -201,6 +202,6 @@ But that's a blog for another time.
 
 ## Conclusion
 
-Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP looking for a way to take twig templates, html, and markdown to create a static site that easily deployable. While it can be extended by creating new bundles, it does not offer a lot of in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.
+Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP, looking for a way to take TWIG templates, html, and markdown to create a static site that is easily deployable. While it can be extended by creating new bundles, it does not offer a lot in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.
 
 A huge thanks to [Beau D. Simensen](https://twitter.com/beausimensen) who created Sculpin, and being an all around awesome human being.

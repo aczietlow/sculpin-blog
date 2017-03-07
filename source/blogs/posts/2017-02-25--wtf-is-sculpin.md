@@ -1,5 +1,5 @@
 ---
-title: WTF is ... Sculpin
+title: WTF is Sculpin
 date: 2017-02-25
 draft: true
 tags:

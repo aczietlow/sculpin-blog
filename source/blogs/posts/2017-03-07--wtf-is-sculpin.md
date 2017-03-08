@@ -1,7 +1,6 @@
 ---
 title: WTF is Sculpin
-date: 2017-02-25
-draft: true
+date: 2017-03-07
 tags:
     - wtf is
     - sculpin

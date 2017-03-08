@@ -9,7 +9,7 @@ featured_image:
     alt: Meet Jackson, the Sculpin mascot 
 ---
 
-Sculpin is a static site generator written in PHP. And WTF is a static site genertor? It is a tool for website content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS or hefty framework, as well as the need for server side technologies like PHP or a database server. A Static site generator is great for my personal blog or the local astronomy group news site, but not ideal for a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
+Sculpin is a static site generator written in PHP. And WTF is a static site generator? It's a tool for generating html files using raw data like TWIG and markdown. It's great for a website that has content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS or hefty framework, as well as the need for server side technologies like PHP or a database server. A Static site generator is great for my personal blog or the local astronomy group news site, but not ideal for a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
 
 * Writing content in markdown
 * TWIG templating

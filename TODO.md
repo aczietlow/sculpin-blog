@@ -1,6 +1,5 @@
 Bugs
 * footer is off center
-* Fix issue causing horizontal scroll bar
 
 Backlog
 * Use tagCloud sculpin plugin
@@ -13,6 +12,9 @@ Backlog
 * Add metatags
 * Automate tweets about new blog posts
 * Add PALLY tests to travis build process
-* Test for semantic and syntactically correct
+* Test for semantic and syntactically correct markup
 * Update build tools to be more inline with my opinions.
 * Update README.md
+* Add categories
+* Create tiled layout for blogs on home page.
+  * Maybe more useful after we have a few more blogs.

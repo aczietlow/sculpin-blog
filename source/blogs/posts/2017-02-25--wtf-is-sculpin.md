@@ -10,7 +10,7 @@ featured_image:
     alt: Meet Jackson, the Sculpin mascot 
 ---
 
-Sculpin is a static site generator written in PHP. And WTF is a static site genertor? It is a great tool for content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS, as well as the need for server side technologies like PHP or a database server. Static site generator is great for my personal blog or the local astronomy group site, but not ideal from a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
+Sculpin is a static site generator written in PHP. And WTF is a static site genertor? It is a tool for website content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS or hefty framework, as well as the need for server side technologies like PHP or a database server. A Static site generator is great for my personal blog or the local astronomy group news site, but not ideal for a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:
 
 * Writing content in markdown
 * TWIG templating
@@ -19,8 +19,10 @@ Sculpin is a static site generator written in PHP. And WTF is a static site gene
 * Secure (everything is client side)
 * Easily deployable (Can host static sites from github for free)
 
-When designing my blog I was looking for the path of least resistance for sharing some code snippets and jotting down a few of my opinions to share with the Interwebs. For someone that is already familiar with PHP, Sculpin is the perfect tool to accomplish exactly this. How does one Sculpin?
-``
+When designing my blog I was looking for the path of least resistance for sharing code snippets and jotting down a few of my opinions to share with the Interwebs. For someone that is already familiar with PHP, Sculpin is the perfect tool to accomplish exactly this. 
+
+*How does one Sculpin?*
+
 ## Installing Sculpin
 
 1. Download the starter kit

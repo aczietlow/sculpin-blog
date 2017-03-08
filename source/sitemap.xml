@@ -18,4 +18,10 @@ permalink: sitemap.xml
     <priority>1.0</priority>
   </url>
   {% endfor %}
+  <url>
+    <loc>{{ site.url }}/about</loc>
+    <lastmod>2017-02-01T19:00:00-05:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

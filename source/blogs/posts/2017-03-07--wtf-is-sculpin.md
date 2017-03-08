@@ -18,7 +18,7 @@ Sculpin is a static site generator written in PHP. And WTF is a static site gene
 * Secure (everything is client side)
 * Easily deployable (Can host static sites from github for free)
 
-When designing my blog I was looking for the path of least resistance for sharing code snippets and jotting down a few of my opinions to share with the Interwebs. For someone that is already familiar with PHP, Sculpin is the perfect tool to accomplish exactly this. 
+Sculpin is perfect for creating a blog with a minimum amount of resistance for sharing code snippets and jotting down a few of opinions to share with the Interwebs from time to time. It's Especially useful for anyone already familiar with PHP and writing markdown.
 
 *How does one Sculpin?*
 
@@ -44,9 +44,9 @@ Navigate to http://localhost:8000. BAM! You now have a boiler plate Sculpin site
 
 ## What's Happening?
 
-Magic! Okay maybe not magic. Sculpin comes with an executable bin, that we're running to parse all of the Twig templates, html, and markdown sources it can find to generate static html pages.
+Magic! Okay maybe not magic. Sculpin comes with an executable bin, that we're running to parse all of the source objects (Twig templates, html, and markdown) files it can find to generate static html pages.
 
-`--watch` tells Sculpin to watch for file changes in order to rewrite necessary HTML files. `--server` launches PHP's built in web server which allows you to see your work in progress. The fact that I don't need a working web server to get started makes it even easier to skip to the part where I can begin writing content.
+`--watch` tells Sculpin to watch for file changes in order to rewrite necessary HTML files. `--server` launches PHP's built in web server which allows you to see your work in progress. The fact that a working web server like apache isn't required makes it even easier to skip straight to writing content without any needless complicated setup. 
 
 ## Creating Content in Sculpin
 
@@ -133,9 +133,42 @@ $response->send();
 $kernel->terminate($request, $response);
 ```
 
-## YAML Frontmatter
+## Theming
 
-Sculpin provides a method to provide additional information on how content can be formatted via a YAML formatter.
+Sculpin's theming system can be heavily customized, but for the most part does a great job of getting out of your way. It uses TWIG for it's templating engine, and relies on creating layouts, which are mostly just wrappers around page content.
+
+```html
+# source/_layouts/default.html
+{% verbatim %}<!DOCTYPE html>
+<html>
+<head>
+    {% include "head" %}
+</head>
+<body id="body">
+    <div class="page-content">
+        {% include "header" %}
+        <main class="content" role="main">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                </div>
+                <div class="col-md-2">
+                    {% include "side_bar" %}
+                </div>
+            </div>
+        </main>
+        {% include "footer" %}
+    </div>
+    {% include "scripts" %}
+</body>
+</html>{% endverbatim %}
+```
+
+But that's a blog for another time.
+
+## YAML Formatter
+
+Sculpin provides a method to add additional information about conten via a YAML formatter. YAML formatters are are a great way to provide meta information about the blog with in the markdown file. Information that can be used to do things like generate markup for something not easily supported in markdown, provide meta tag information, create taxonomy tagging of content, and more.
 
 Markdown without YAML formatter.
 ```
@@ -167,42 +200,8 @@ we can access YAML directives with the TWIG template view {{ page.title}}
 
 ```
 
-They are a great way to provide meta information about the blog with in the markdown file. Information that can be used to do things like generate markup for something not easily supported in markdown, provide meta tag information, create taxonomy tagging of content, and more.
-
-## Theming
-
-Sculpin's theming system can be heavily customized, but for the most part does a great job of getting out of your way. It uses TWIG for it's templating engine, and relies on creating layouts, which are mostly just wrappers around page content.
-
-```html
-{% verbatim %}<!DOCTYPE html>
-<html>
-<head>
-    {% include "head" %}
-</head>
-<body id="body">
-    <div class="page-content">
-        {% include "header" %}
-        <main class="content" role="main">
-            <div class="row">
-                <div class="col-md-6 col-md-offset-2">
-                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
-                </div>
-                <div class="col-md-2">
-                    {% include "side_bar" %}
-                </div>
-            </div>
-        </main>
-        {% include "footer" %}
-    </div>
-    {% include "scripts" %}
-</body>
-</html>{% endverbatim %}
-```
-
-But that's a blog for another time.
-
 ## Conclusion
 
-Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP, looking for a way to take TWIG templates, html, and markdown to create a static site that is easily deployable. While it can be extended by creating new bundles, it does not offer a lot in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.
+Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP, looking for a way to quickly take TWIG templates, html, and markdown to create a static site that is easily deployable. While it can be extended by creating new bundles, it does not offer a lot in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.
 
 A huge thanks to [Beau D. Simensen](https://twitter.com/beausimensen) who created Sculpin, and being an all around awesome human being.

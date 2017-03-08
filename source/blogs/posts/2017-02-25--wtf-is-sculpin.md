@@ -164,7 +164,7 @@ The YAML formatters are seperated by `---` and written in YAML syntax. The YAML 
 ```html
 we can access YAML directives with the TWIG template view {{ page.title}}
  
-<img src="/assets/imgs/blogs/{{ page.featured_image.image }}"/>
+<img src="{{ page.featured_image.image }}"/>
 
 ```
 

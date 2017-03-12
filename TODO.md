@@ -1,5 +1,6 @@
 Bugs
 * footer is off center
+* twig includes are completely rendered and returned, i.e. they can't use the inheritance of twig's block system.
 
 Backlog
 * Use tagCloud sculpin plugin

@@ -10,7 +10,7 @@ Backlog
 * Make block for drupal association badge & stuff
 * Add a toggle night mode (use dracula theme)
 * Add title attribute to links
-* Add metatags
+* ~~Add metatags~~
 * Automate tweets about new blog posts
 * Add PALLY tests to travis build process
 * Test for semantic and syntactically correct markup
@@ -19,3 +19,6 @@ Backlog
 * Add categories
 * Create tiled layout for blogs on home page.
   * Maybe more useful after we have a few more blogs.
+  
+Content
+* List of Sculpin plugins

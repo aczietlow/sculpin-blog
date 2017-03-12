@@ -2,6 +2,10 @@
 
 {% block head_meta %}
     <meta name="robots" content="index, follow">
+    {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags|join(', ') }}">
+
+    {% endif %}
 {% endblock %}
 
 {% block content_wrapper %}
@@ -9,6 +13,7 @@
         <header>
             <h2>{{ page.title }}</h2>
         </header>
+        <p class="date">{{ page.date|date("M d, Y") }}</p>
         {% if page.tags %}
         <p class="tags">
             {% for tag in page.tags %}

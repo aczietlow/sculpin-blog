@@ -3,7 +3,7 @@
 {% block head_meta %}
     <meta name="robots" content="index, follow">
     {% if page.tags %}
-    <meta name="keywords" content="{{ page.tags|join }}">
+    <meta name="keywords" content="{{ page.tags|join(', ') }}">
 
     {% endif %}
 {% endblock %}

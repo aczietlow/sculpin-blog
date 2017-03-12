@@ -1,6 +1,5 @@
 Bugs
 * footer is off center
-* twig includes are completely rendered and returned, i.e. they can't use the inheritance of twig's block system.
 
 Backlog
 * Use tagCloud sculpin plugin
@@ -19,6 +18,7 @@ Backlog
 * Add categories
 * Create tiled layout for blogs on home page.
   * Maybe more useful after we have a few more blogs.
+* Extend templates everywhere possible instead of using 'includes'
   
 Content
 * List of Sculpin plugins

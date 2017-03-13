@@ -1,6 +1,12 @@
-<footer class="container">
-    <div>
-        <span><a href="{{ site.url }}/privacy">Privacy</a></span>
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div>
+                <span><a href="{{ site.url }}/privacy">Privacy</a></span>
+            </div>
+            &copy; {{ "now"|date("Y") }} {{ site.title }} | Powered by <a href="https://sculpin.io/">Sculpin</a>
+        </div>
     </div>
-    &copy; {{ "now"|date("Y") }} {{ site.title }} | Powered by <a href="https://sculpin.io/">Sculpin</a>
+
+
 </footer>

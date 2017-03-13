@@ -1,5 +1,5 @@
 Bugs
-* footer is off center
+*
 
 Backlog
 * Use tagCloud sculpin plugin

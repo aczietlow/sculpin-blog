@@ -4,9 +4,62 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2cc41b73d98fd0f234bf3f734bcd8e14",
-    "content-hash": "488bd99e329821bafad34644b39ba918",
+    "hash": "e43b372cf7dd87cff3c3b5b6d069fd65",
+    "content-hash": "9b9c85c129ea04eebf3e085a243bc1e6",
     "packages": [
+        {
+            "name": "beryllium/icelus",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beryllium/icelus.git",
+                "reference": "25c58d05202f99e1f591426287262d644a9449c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beryllium/icelus/zipball/25c58d05202f99e1f591426287262d644a9449c9",
+                "reference": "25c58d05202f99e1f591426287262d644a9449c9",
+                "shasum": ""
+            },
+            "require": {
+                "imanee/imanee": "*"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.4.0",
+                "phpunit/phpunit": "~4.5",
+                "symfony/config": "~2.1",
+                "symfony/dependency-injection": "~2.1",
+                "symfony/filesystem": "~2.6",
+                "symfony/http-kernel": "~2.6",
+                "twig/twig": "~1.18"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Beryllium\\Icelus\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Boyd",
+                    "email": "kevin.boyd@gmail.com",
+                    "homepage": "http://whateverthing.com"
+                }
+            ],
+            "description": "Thumbnail generator for Sculpin-based websites",
+            "homepage": "http://whateverthing.com",
+            "keywords": [
+                "Thumbnails",
+                "images",
+                "sculpin",
+                "sculpin-plugin"
+            ],
+            "time": "2015-12-12 01:01:50"
+        },
         {
             "name": "components/bootstrap",
             "version": "dev-master",
@@ -1075,6 +1128,67 @@
             ],
             "abandoned": "guzzlehttp/guzzle",
             "time": "2012-12-19 23:06:35"
+        },
+        {
+            "name": "imanee/imanee",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imanee/imanee.git",
+                "reference": "cf390b5e7f92ca21d6e388abe51433e9ed671b1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imanee/imanee/zipball/cf390b5e7f92ca21d6e388abe51433e9ed671b1b",
+                "reference": "cf390b5e7f92ca21d6e388abe51433e9ed671b1b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "ext-imagick": "*",
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "3.7.*",
+                "raveren/kint": "^1.0",
+                "satooshi/php-coveralls": "^0.6.1"
+            },
+            "suggest": {
+                "ext-gd": "To allow Imanee\\ImageResource\\GDResource usage.",
+                "ext-imagick": "To allow Imanee\\ImageResource\\ImagickResource usage."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Imanee\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Erika Heidi",
+                    "email": "erika@erikaheidi.com"
+                }
+            ],
+            "description": "PHP Image Manipulation Library",
+            "homepage": "http://imanee.io",
+            "keywords": [
+                "ImageMagick",
+                "gd",
+                "image",
+                "imagick",
+                "php"
+            ],
+            "time": "2015-11-20 02:04:09"
         },
         {
             "name": "justinrainbow/json-schema",

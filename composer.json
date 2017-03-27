@@ -14,7 +14,8 @@
         "components/highlightjs": "~7.3.0",
         "components/jquery": "~1.9.1",
         "composer/composer": "@dev",
-        "sculpin/sculpin": "dev-master"
+        "sculpin/sculpin": "dev-master",
+        "beryllium/icelus": "^1.0"
     },
     "config": {
         "bin-dir": "bin",
@@ -22,4 +23,3 @@
         "process-timeout": 1200
     }
 }
-

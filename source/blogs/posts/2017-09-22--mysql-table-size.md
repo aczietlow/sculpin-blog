@@ -22,7 +22,7 @@ LIMIT 20;
 ## Problem
 I found myself working on a project that had been in active development for 5 years and had a 25 GB database. One of my tasks was to implement automated testing and build a CD/CI pipeline in an effort to decrease the amount of bugs we were shipping and decrease the feedback loop on newly implemented features. The largest challenge was the amount of time it took to build a fresh instance of the site. This was almost entirely due to the size of the database.
 
-Typically I would look at deleting all content to drastically trim the size of the database, as it's not needed for testing. However, a very complex data architecture made it difficult to separate content from configuration. Using the above query, I was able to identify which tables were the largest, and quickly focus on efficiently trimming the size of the database down. e.g. We had implemented duplicate logging paradigms without a method to truncate data over time. This accounted for about 6 GB worth of size in and of itself.
+Typically I would look at deleting all content to drastically trim the size of the database, as it's not needed for testing. However, a very complex data architecture made it difficult to separate content from configuration. Using the above query, I was able to identify which tables were the largest, and quickly focus on efficiently trimming the size of the database down. e.g. We had implemented duplicate logging paradigms without a method to truncate data over time. This accounted for about 6 GB by itself.
 
 I also use the results to identify if any of our indexes could be refactored to be more efficient. An index size that closely matches the table_data size could indicate redundant or duplicate index entries.
 

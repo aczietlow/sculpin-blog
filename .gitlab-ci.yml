@@ -6,8 +6,8 @@ variables:
 
 before_script:
   - env NOKOGIRI_USE_SYSTEM_LIBRARIES=true bundle install
-    - composer self-update
-    - composer install --dev --prefer-dist
+  - composer self-update
+  - composer install --dev --prefer-dist
 
 test:
   stage: test

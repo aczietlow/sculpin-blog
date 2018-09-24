@@ -1,4 +1,4 @@
-image: czietlow/gitlab-pipeline-agent:edge-php
+image: bitswarm/apache-php-webapp:latest
 
 variables:
   JEKYLL_ENV: production

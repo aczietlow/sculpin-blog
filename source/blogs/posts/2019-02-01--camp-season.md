@@ -17,8 +17,8 @@ East Coast Drupal's guide to camps.
 | [Drupaldelphia](https://www.drupaldelphia.org/) | 05/03/2019  | 05/03/2019 | N/A | Philadelphia, PA |
 | [Drupal Camp Chattanooga](https://www.drupalcampchattanooga.com) | 06/08/2019  | 06/08/2019 | N/A    | Chattanooga, TN |
 | [Drupal Camp Asheville](https://www.drupalasheville.com) | 06/12/2019  | 06/14/2019 | 04/22/2019    | Asheville, NC |
+| [Drupal Gov Con](https://www.drupalgovcon.org) | 07/24/2019  | 07/26/2019 | N/A | Washington, D.C. |
 | [Decoupled Drupal Days](https://decoupleddays.com) | ~Aug * | ~Aug * | N/A | NYC, NY |
-| [Drupal Gov Con](https://www.drupalgovcon.org) | late Sept  | late Sept | N/A | Washington, D.C. |
 | [Drupal Camp Baltimore](https://www.bmoredrupal.com) | ~Oct * | ~Oct * | N/A | Baltimore, MD |
 | [Drupal Camp Cornell](https://camp.drupal.cornell.edu) | ~Oct * | ~Oct * | N/A    | Ithaca, NY |
 | [Drupal Camp Atlanta](https://www.drupalcampatlanta.com) | ~Nov * | ~Nov * |  N/A | Atlanta, GA |

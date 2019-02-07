@@ -4,6 +4,7 @@ date: 2019-02-01
 tags:
     - drupal
     - camps
+css_page_selector: camps-table   
 ---
 
 East Coast Drupal's guide to camps.

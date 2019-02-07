@@ -1,0 +1,14 @@
+article.camps-table {
+  table, th, td {
+    border: grey 1px solid;
+  }
+  td, th {
+    padding: 10px;
+  }
+  thead tr {
+    background-color: lightgray;
+  }
+  tbody tr:nth-child(even) {
+    background-color: lighten(#d3d3d3, 10%);
+  }
+}

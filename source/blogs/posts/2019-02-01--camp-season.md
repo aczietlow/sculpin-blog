@@ -14,7 +14,7 @@ East Coast Drupal's guide to camps.
 | [Drupal Camp New Jersey](https://www.drupalcampnj.org) | 02/02/2019  | 02/02/2019 | Closed | Princeton, NJ |
 | [Florida Drupal Camp](https://www.fldrupal.camp) | 02/15/2019  | 02/17/2019 | Closed    | Orlando, FL |
 | [Drupal Con](https://events.drupal.org/drupalcon) | 04/08/2019  | 04/12/2019 | Closed | Seattle, WA |
-| [Drupaldelphia](https://www.drupaldelphia.org/) | 05/03/2019  | 05/03/2019 | N/A | Philadelphia, PA |
+| [Drupaldelphia](https://www.drupaldelphia.org/) | 05/10/2019  | 05/10/2019 | N/A | Philadelphia, PA |
 | [Drupal Camp Chattanooga](https://www.drupalcampchattanooga.com) | 06/08/2019  | 06/08/2019 | N/A    | Chattanooga, TN |
 | [Drupal Camp Asheville](https://www.drupalasheville.com) | 06/12/2019  | 06/14/2019 | 04/22/2019    | Asheville, NC |
 | [Drupal Gov Con](https://www.drupalgovcon.org) | 07/24/2019  | 07/26/2019 | N/A | Washington, D.C. |

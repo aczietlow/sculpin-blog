@@ -16,7 +16,7 @@ East Coast Drupal's guide to camps.
 | [Drupal Con](https://events.drupal.org/drupalcon) | 04/08/2019  | 04/12/2019 | Closed | Seattle, WA |
 | [Drupaldelphia](https://www.drupaldelphia.org/) | 05/10/2019  | 05/10/2019 | 03/08/2019 | Philadelphia, PA |
 | [Drupal Camp Chattanooga](https://www.drupalcampchattanooga.com) | 06/08/2019  | 06/08/2019 | N/A    | Chattanooga, TN |
-| [Drupal Camp Asheville](https://www.drupalasheville.com) | 06/12/2019  | 06/14/2019 | 04/22/2019    | Asheville, NC |
+| [Drupal Camp Asheville](https://www.drupalasheville.com) | 07/12/2019  | 07/14/2019 | 04/22/2019    | Asheville, NC |
 | [Drupal Gov Con](https://www.drupalgovcon.org) | 07/24/2019  | 07/26/2019 | N/A | Washington, D.C. |
 | [Decoupled Drupal Days](https://decoupleddays.com) | ~Aug * | ~Aug * | N/A | NYC, NY |
 | [Drupal Camp Baltimore](https://www.bmoredrupal.com) | ~Oct * | ~Oct * | N/A | Baltimore, MD |

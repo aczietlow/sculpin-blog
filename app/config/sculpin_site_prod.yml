@@ -8,7 +8,7 @@ subtitle: Goes to 11!
 email: aczietlow@gmail.com
 
 # Sculpin loads assets with permalinks, thus we have to define the base url where the project lives.
-url: http://zietlow.io
+url: https://zietlow.io
 
 # Insert your disqus shortname
 disqus:

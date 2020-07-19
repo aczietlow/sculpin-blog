@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WTF is Sculpin &mdash; Chris Zietlow</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#9876AA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="wtf is, sculpin">
+
+    
+    <link rel="icon" href="https://zietlow.io/favicon.ico">
+    <link rel="stylesheet" href="https://zietlow.io/components/highlightjs/styles/github.css"/>
+    <link href="https://zietlow.io/components/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://zietlow.io/code/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="alternate" type="application/atom+xml" href="https://zietlow.io/atom.xml"
+          title="Chris Zietlow activity feed"/>
+
+    <link rel="shortcut icon" sizes="76x76" href="/assets/imgs/jackson/76x76.png">
+    <link rel="shortcut icon" sizes="120x120" href="/assets/imgs/jackson/120x120.png">
+    <link rel="shortcut icon" sizes="128x128" href="/assets/imgs/jackson/128x128.png">
+    <link rel="shortcut icon" sizes="152x152" href="/assets/imgs/jackson/152x152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/assets/imgs/jackson/196x196.png">
+    <link rel="shortcut icon" sizes="512x512" href="/assets/imgs/jackson/512x512.png">
+    <link rel="shortcut icon" sizes="1024x1024" href="/assets/imgs/jackson/1024x1024.png">
+    <link rel="shortcut icon" sizes="2048x2048" href="/assets/imgs/jackson/2048x2048.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/imgs/jackson/76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/imgs/jackson/120x120.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/assets/imgs/jackson/128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/imgs/jackson/152x152.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/assets/imgs/jackson/196x196.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/imgs/jackson/512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/assets/imgs/jackson/1024x1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="/assets/imgs/jackson/2048x2048.png">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://zietlow.io/components/bootstrap/js/bootstrap.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2321595869015354",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    
+    
+    </head>
+<body id="body">
+      <div class="hero-image" style="background-image: url('https://zietlow.io/assets/imgs/hero_image.jpg')">
+    <img src="https://zietlow.io/assets/imgs/me.png" class="heroimage--portrait-thumbnail" alt="Zietlow">
+</div>
+<span class="home-button">
+    <a href="https://zietlow.io/"><i class="fa fa-home fa-3x"></i></a>
+</span>
+<header class="container">
+    <div class="row">
+        <div class="span6 offset3">
+            <div class="menu">
+                <span><a href="https://zietlow.io/blog">Blogs</a></span>
+                <span><h1 class="title">Chris Zietlow</h1></span>
+                <span><a href="https://zietlow.io/about">About</a></span>
+            </div>
+            <div class="sub-menu">
+                <a href="https://twitter.com/aczietlow"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.drupal.org/u/aczietlow"><i class="fa fa-drupal"></i></a>
+                <a href="https://github.com/aczietlow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</header>  <div class="container-fluid">
+    <main class="content" role="main">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+              <article class="blog ">
+        <header>
+            <h2>WTF is Sculpin</h2>
+        </header>
+        <p class="date">Mar 07, 2017</p>
+                <p class="tags">
+                            <a href="https://zietlow.io/blogs/tags/wtf%20is">wtf is</a>,                             <a href="https://zietlow.io/blogs/tags/sculpin">sculpin</a>                    </p>
+                <div>
+                        <div class="center">
+                <img src="/assets/imgs/blogs/jackson.png" alt="Meet Jackson, the Sculpin mascot"/>
+            </div>
+                        <p>Sculpin is a static site generator written in PHP. And WTF is a static site generator? It's a tool for generating html files using raw data like TWIG and markdown. It's great for a website that has content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS or hefty framework, as well as the need for server side technologies like PHP or a database server. A Static site generator is great for my personal blog or the local astronomy group news site, but not ideal for a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:</p>
+
+<ul>
+<li>Writing content in markdown</li>
+<li>TWIG templating</li>
+<li>Syntax highlighting</li>
+<li>Extremely fast</li>
+<li>Secure (everything is client side)</li>
+<li>Easily deployable (Can host static sites from github for free)</li>
+</ul>
+
+<p>Sculpin is perfect for creating a blog with a minimum amount of resistance for sharing code snippets and jotting down a few of opinions to share with the Interwebs from time to time. It's Especially useful for anyone already familiar with PHP and writing markdown.</p>
+
+<p><em>How does one Sculpin?</em></p>
+
+<h2 id="installing-sculpin">Installing Sculpin</h2>
+
+<ol>
+<li>Download the starter kit</li>
+</ol>
+
+<pre><code>git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
+cd myblog
+composer install
+</code></pre>
+
+<p>The starter kit is a skeleton build of Sculpin and is a great starting point for launching Sculpin as a blog.</p>
+
+<ol start="2">
+<li>Run Sculpin</li>
+</ol>
+
+<pre><code>vendor/sculpin/sculpin/bin/sculpin generate --watch --server
+</code></pre>
+
+<p>Navigate to http://localhost:8000. BAM! You now have a boiler plate Sculpin site.</p>
+
+<h2 id="what%27s-happening%3F">What's Happening?</h2>
+
+<p>Magic! Okay maybe not magic. Sculpin comes with an executable bin, that we're running to parse all of the source objects (Twig templates, html, and markdown) files it can find to generate static html pages.</p>
+
+<p><code>--watch</code> tells Sculpin to watch for file changes in order to rewrite necessary HTML files. <code>--server</code> launches PHP's built in web server which allows you to see your work in progress. The fact that a working web server like apache isn't required makes it even easier to skip straight to writing content without any needless complicated setup.</p>
+
+<h2 id="creating-content-in-sculpin">Creating Content in Sculpin</h2>
+
+<p>Sculpin uses a markdown converter <a href="https://github.com/michelf/php-markdown">michelf/php-markdown</a> for taking the blog content written in markdown and converting it to html. That means once the Twig templates and theme are in place, adding new content can be as simple as dropping a new markdown file into the code base. Luckily the starter kit comes with a working layout and theme, so we can get jump start to creating content.</p>
+
+<p>By default Sculpin will look for blog post content or <strong>source objects</strong> in each file under the `/source' directory. All content posts can be written in markdown which Sculpin with convert into html.</p>
+
+<pre><code> # Markdown Cheatsheet
+
+ # This is an &lt;h1&gt;
+ ## This is an &lt;h2&gt;
+ ### This is an &lt;h3&gt;
+
+ We can place special emphasis on some words by making them **bold** or *italics*
+
+  Link
+  [More on Markdown](https://guides.github.com/features/mastering-markdown/)
+
+ Lists
+ 1. Step 1
+ 1. ????
+ 1. Step 3: Profit
+
+ * Moon Knight
+ * Scarlet Witch
+ * Gambit
+ * Hope Summers
+</code></pre>
+
+<blockquote>
+  <h1 id="this-is-an-%26%2360%3Bh1%26%2362%3B">This is an &#60;h1&#62;</h1>
+  
+  <h2 id="this-is-an-%26%2360%3Bh2%26%2362%3B">This is an &#60;h2&#62;</h2>
+  
+  <h3 id="this-is-an-%26%2360%3Bh3%26%2362%3B">This is an &#60;h3&#62;</h3>
+  
+  <p>We can place special emphasis on some words by making them <strong>bold</strong> or <em>italics</em></p>
+  
+  <p>Link
+  <a href="https://guides.github.com/features/mastering-markdown/">More on Markdown</a></p>
+  
+  <p>Lists</p>
+  
+  <ol>
+  <li>Step 1: Make numbered list</li>
+  <li>Step 2: ????</li>
+  <li>Step 3: Profit</li>
+  </ol>
+</blockquote>
+
+<ul>
+<li>Moon Knight</li>
+<li>Scarlet Which</li>
+<li>Gambit</li>
+<li>Hope Summers</li>
+</ul>
+
+<h2 id="syntax-highlighting">Syntax Highlighting</h2>
+
+<p>Another key feature that is a necessity when writing about code is syntax highlighting. Sculpin ships with highlightjs. No assembly required, batteries included!</p>
+
+<pre><code class="markdown">```php
+use Drupal\Core\DrupalKernel;
+use Symfony\Component\HttpFoundation\Request;
+
+$autoloader = require_once 'autoload.php';
+
+$kernel = new DrupalKernel('prod', $autoloader);
+
+$request = Request::createFromGlobals();
+$response = $kernel-&gt;handle($request);
+$response-&gt;send();
+
+$kernel-&gt;terminate($request, $response);
+`'`
+</code></pre>
+
+<pre><code class="php">use Drupal\Core\DrupalKernel;
+use Symfony\Component\HttpFoundation\Request;
+
+$autoloader = require_once 'autoload.php';
+
+$kernel = new DrupalKernel('prod', $autoloader);
+
+$request = Request::createFromGlobals();
+$response = $kernel-&gt;handle($request);
+$response-&gt;send();
+
+$kernel-&gt;terminate($request, $response);
+</code></pre>
+
+<h2 id="theming">Theming</h2>
+
+<p>Sculpin's theming system can be heavily customized, but for the most part does a great job of getting out of your way. It uses TWIG for it's templating engine, and relies on creating layouts, which are mostly just wrappers around page content.</p>
+
+<pre><code class="html"># source/_layouts/default.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    {% include "head" %}
+&lt;/head&gt;
+&lt;body id="body"&gt;
+    &lt;div class="page-content"&gt;
+        {% include "header" %}
+        &lt;main class="content" role="main"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-md-6 col-md-offset-2"&gt;
+                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                &lt;/div&gt;
+                &lt;div class="col-md-2"&gt;
+                    {% include "side_bar" %}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        {% include "footer" %}
+    &lt;/div&gt;
+    {% include "scripts" %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>But that's a blog for another time.</p>
+
+<h2 id="yaml-formatter">YAML Formatter</h2>
+
+<p>Sculpin provides a method to add additional information about conten via a YAML formatter. YAML formatters are are a great way to provide meta information about the blog with in the markdown file. Information that can be used to do things like generate markup for something not easily supported in markdown, provide meta tag information, create taxonomy tagging of content, and more.</p>
+
+<p>Markdown without YAML formatter.</p>
+
+<pre><code> # Normal Markdown
+</code></pre>
+
+<p>With YAML formatter</p>
+
+<pre><code>---
+title: WTF is Sculpin
+date: 2017-03-31
+layout: default
+tags:
+    - wtf is
+    - sculpin
+featured_image: 
+    image: jackson.png
+ ---
+ # Markdown with spandex and a cape
+</code></pre>
+
+<p>The YAML formatters are seperated by <code>---</code> and written in YAML syntax. The YAML formatter will be parsed and injected into every page twig template using <code>page.%KEY%</code>. Nested structures are accessible by using a <code>.</code> to decend through the structure.</p>
+
+<pre><code class="html">we can access YAML directives with the TWIG template view WTF is Sculpin
+
+&lt;img src="jackson.png"/&gt;
+
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP, looking for a way to quickly take TWIG templates, html, and markdown to create a static site that is easily deployable. While it can be extended by creating new bundles, it does not offer a lot in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.</p>
+
+<p>A huge thanks to <a href="https://twitter.com/beausimensen">Beau D. Simensen</a> who created Sculpin, and being an all around awesome human being.</p>
+
+            <a href="#body">Back To Top</a>
+        </div>
+
+            </article>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'zietlow'; // required: replace example with your forum shortname
+
+
+    
+    
+    
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered byDisqus.</a>
+</noscript>
+
+        </div>
+        <div class="col-md-2">
+          
+Warning: count(): Parameter must be an array or an object that implements Countable in /Users/czietlow/Sites/sculpin-blog/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1237
+
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div>
+                <span><a href="https://zietlow.io/privacy">Privacy</a></span>
+            </div>
+            &copy; 2020 Chris Zietlow | Powered by <a href="https://sculpin.io/">Sculpin</a>
+        </div>
+    </div>
+
+
+</footer>  <script>window.jQuery || document.write('<script src="https://zietlow.io/components/jquery/jquery.min.js"><\/script>')</script>
+
+
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-106922423-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+<script src="https://zietlow.io/components/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

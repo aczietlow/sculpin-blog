@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Chris Zietlow]]></title>
+    <link href="https://zietlow.io/atom.xml" rel="self"/>
+    <link href="https://zietlow.io/"/>
+    <updated>2020-07-19T20:55:40+00:00</updated>
+    <id>https://zietlow.io/</id>
+        <author>
+                <email><![CDATA[aczietlow@gmail.com]]></email>    </author>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+        <entry>
+        <title type="html"><![CDATA[2019 East Coast Drupal Camp Guide]]></title>
+        <link href="https://zietlow.io/blog/2019-east-coast-drupal-camp-guide"/>
+        <updated>2019-02-01T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/2019-east-coast-drupal-camp-guide</id>
+        <content type="html"><![CDATA[<p>East Coast Drupal's guide to camps.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Event</th>
+  <th>Start Date</th>
+  <th>End Date</th>
+  <th>CFP Deadline</th>
+  <th>Locale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://www.drupalcampnj.org">Drupal Camp New Jersey</a></td>
+  <td>02/02/2019</td>
+  <td>02/02/2019</td>
+  <td>Closed</td>
+  <td>Princeton, NJ</td>
+</tr>
+<tr>
+  <td><a href="https://www.fldrupal.camp">Florida Drupal Camp</a></td>
+  <td>02/15/2019</td>
+  <td>02/17/2019</td>
+  <td>Closed</td>
+  <td>Orlando, FL</td>
+</tr>
+<tr>
+  <td><a href="https://events.drupal.org/drupalcon">Drupal Con</a></td>
+  <td>04/08/2019</td>
+  <td>04/12/2019</td>
+  <td>Closed</td>
+  <td>Seattle, WA</td>
+</tr>
+<tr>
+  <td><a href="https://www.drupaldelphia.org/">Drupaldelphia</a></td>
+  <td>05/10/2019</td>
+  <td>05/10/2019</td>
+  <td>03/08/2019</td>
+  <td>Philadelphia, PA</td>
+</tr>
+<tr>
+  <td><a href="https://www.drupalcampchattanooga.com">Drupal Camp Chattanooga</a></td>
+  <td>06/08/2019</td>
+  <td>06/08/2019</td>
+  <td>N/A</td>
+  <td>Chattanooga, TN</td>
+</tr>
+<tr>
+  <td><a href="https://www.drupalasheville.com">Drupal Camp Asheville</a></td>
+  <td>07/12/2019</td>
+  <td>07/14/2019</td>
+  <td>04/22/2019</td>
+  <td>Asheville, NC</td>
+</tr>
+<tr>
+  <td><a href="https://www.drupalgovcon.org">Drupal Gov Con</a></td>
+  <td>07/24/2019</td>
+  <td>07/26/2019</td>
+  <td>N/A</td>
+  <td>Washington, D.C.</td>
+</tr>
+<tr>
+  <td><a href="https://decoupleddays.com">Decoupled Drupal Days</a></td>
+  <td>~Aug *</td>
+  <td>~Aug *</td>
+  <td>N/A</td>
+  <td>NYC, NY</td>
+</tr>
+<tr>
+  <td><a href="https://www.bmoredrupal.com">Drupal Camp Baltimore</a></td>
+  <td>~Oct *</td>
+  <td>~Oct *</td>
+  <td>N/A</td>
+  <td>Baltimore, MD</td>
+</tr>
+<tr>
+  <td><a href="https://camp.drupal.cornell.edu">Drupal Camp Cornell</a></td>
+  <td>~Oct *</td>
+  <td>~Oct *</td>
+  <td>N/A</td>
+  <td>Ithaca, NY</td>
+</tr>
+<tr>
+  <td><a href="https://www.drupalcampatlanta.com">Drupal Camp Atlanta</a></td>
+  <td>~Nov *</td>
+  <td>~Nov *</td>
+  <td>N/A</td>
+  <td>Atlanta, GA</td>
+</tr>
+<tr>
+  <td><a href="https://nedcamp.org">New England Drupal Camp</a></td>
+  <td>~Nov *</td>
+  <td>~Nov *</td>
+  <td>N/A</td>
+  <td>Providence, RI</td>
+</tr>
+</tbody>
+</table>
+
+<p>&#42; Dates are based on camp dates from 2018.</p>
+
+<p>If I missed one, or you feel like the dates are incorrect please reach on twitter at <a href="https://twitter.com/aczietlow/">@aczietlow</a> and I'll be happy to update them ASAP.</p>
+]]></content>
+    </entry>
+        <entry>
+        <title type="html"><![CDATA[Find mysql Table Size]]></title>
+        <link href="https://zietlow.io/blog/find-mysql-table-size"/>
+        <updated>2017-09-22T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/find-mysql-table-size</id>
+        <content type="html"><![CDATA[<h2 id="tl%3Bdr">TL;DR</h2>
+
+<p>A sql query to list the size of database tables on a mysql server.</p>
+
+<pre><code class="mysql">SELECT concat( table_schema, '.', table_name ) table_name,
+       concat( round( data_length / ( 1024 *1024 ) , 2 ) , 'M' ) data_length,
+       concat( round( index_length / ( 1024 *1024 ) , 2 ) , 'M' ) index_length,
+       concat( round( round( data_length + index_length ) / ( 1024 *1024 ) , 2 ) , 'M' ) total_size
+FROM information_schema.TABLES
+ORDER BY LENGTH(total_size) DESC, total_size DESC
+LIMIT 20;
+</code></pre>
+
+<h2 id="problem">Problem</h2>
+
+<p>I found myself working on a project that had been in active development for 5 years and had a 25 GB database. One of my tasks was to implement automated testing and build a CD/CI pipeline in an effort to decrease the amount of bugs we were shipping and decrease the feedback loop on newly implemented features. The largest challenge was the amount of time it took to build a fresh instance of the site. This was almost entirely due to the size of the database.</p>
+
+<p>Typically I would look at deleting all content to drastically trim the size of the database, as it's not needed for testing. However, a very complex data architecture made it difficult to separate content from configuration. Using the above query, I was able to identify which tables were the largest, and quickly focus on efficiently trimming the size of the database down. e.g. We had implemented duplicate logging paradigms without a method to truncate data over time. This accounted for about 6 GB by itself.</p>
+
+<p>I also use the results to identify if any of our indexes could be refactored to be more efficient. An index size that closely matches the table_data size could indicate redundant or duplicate index entries.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>It queries the information schema table to get the size of the database on disk. Initially I found that the <code>data_length</code> was significantly different from the size on disk, which led to the combination of <code>data_length</code> and <code>index_length</code>. Using some simple math I convert the bytes into MB to make the output more human readable. Finally I sort using a natural number sort, similar to php's nat_sort of alpha-numeric values.</p>
+]]></content>
+    </entry>
+        <entry>
+        <title type="html"><![CDATA[WTF is Sculpin]]></title>
+        <link href="https://zietlow.io/blog/wtf-is-sculpin"/>
+        <updated>2017-03-07T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/wtf-is-sculpin</id>
+        <content type="html"><![CDATA[<p>Sculpin is a static site generator written in PHP. And WTF is a static site generator? It's a tool for generating html files using raw data like TWIG and markdown. It's great for a website that has content that doesn’t need to be updated by multiple users on a regular basis, authentication, search, or any logic that requires server side communications. It can remove much of the complexity that comes with a CMS or hefty framework, as well as the need for server side technologies like PHP or a database server. A Static site generator is great for my personal blog or the local astronomy group news site, but not ideal for a large news organization that has much more dynamic content. Sculpin has the advantage of being written in a language I’m already familiar with; PHP. Some of the standout features of Sculpin include:</p>
+
+<ul>
+<li>Writing content in markdown</li>
+<li>TWIG templating</li>
+<li>Syntax highlighting</li>
+<li>Extremely fast</li>
+<li>Secure (everything is client side)</li>
+<li>Easily deployable (Can host static sites from github for free)</li>
+</ul>
+
+<p>Sculpin is perfect for creating a blog with a minimum amount of resistance for sharing code snippets and jotting down a few of opinions to share with the Interwebs from time to time. It's Especially useful for anyone already familiar with PHP and writing markdown.</p>
+
+<p><em>How does one Sculpin?</em></p>
+
+<h2 id="installing-sculpin">Installing Sculpin</h2>
+
+<ol>
+<li>Download the starter kit</li>
+</ol>
+
+<pre><code>git clone https://github.com/sculpin/sculpin-blog-skeleton.git myblog
+cd myblog
+composer install
+</code></pre>
+
+<p>The starter kit is a skeleton build of Sculpin and is a great starting point for launching Sculpin as a blog.</p>
+
+<ol start="2">
+<li>Run Sculpin</li>
+</ol>
+
+<pre><code>vendor/sculpin/sculpin/bin/sculpin generate --watch --server
+</code></pre>
+
+<p>Navigate to http://localhost:8000. BAM! You now have a boiler plate Sculpin site.</p>
+
+<h2 id="what%27s-happening%3F">What's Happening?</h2>
+
+<p>Magic! Okay maybe not magic. Sculpin comes with an executable bin, that we're running to parse all of the source objects (Twig templates, html, and markdown) files it can find to generate static html pages.</p>
+
+<p><code>--watch</code> tells Sculpin to watch for file changes in order to rewrite necessary HTML files. <code>--server</code> launches PHP's built in web server which allows you to see your work in progress. The fact that a working web server like apache isn't required makes it even easier to skip straight to writing content without any needless complicated setup.</p>
+
+<h2 id="creating-content-in-sculpin">Creating Content in Sculpin</h2>
+
+<p>Sculpin uses a markdown converter <a href="https://github.com/michelf/php-markdown">michelf/php-markdown</a> for taking the blog content written in markdown and converting it to html. That means once the Twig templates and theme are in place, adding new content can be as simple as dropping a new markdown file into the code base. Luckily the starter kit comes with a working layout and theme, so we can get jump start to creating content.</p>
+
+<p>By default Sculpin will look for blog post content or <strong>source objects</strong> in each file under the `/source' directory. All content posts can be written in markdown which Sculpin with convert into html.</p>
+
+<pre><code> # Markdown Cheatsheet
+
+ # This is an &lt;h1&gt;
+ ## This is an &lt;h2&gt;
+ ### This is an &lt;h3&gt;
+
+ We can place special emphasis on some words by making them **bold** or *italics*
+
+  Link
+  [More on Markdown](https://guides.github.com/features/mastering-markdown/)
+
+ Lists
+ 1. Step 1
+ 1. ????
+ 1. Step 3: Profit
+
+ * Moon Knight
+ * Scarlet Witch
+ * Gambit
+ * Hope Summers
+</code></pre>
+
+<blockquote>
+  <h1 id="this-is-an-%26%2360%3Bh1%26%2362%3B">This is an &#60;h1&#62;</h1>
+  
+  <h2 id="this-is-an-%26%2360%3Bh2%26%2362%3B">This is an &#60;h2&#62;</h2>
+  
+  <h3 id="this-is-an-%26%2360%3Bh3%26%2362%3B">This is an &#60;h3&#62;</h3>
+  
+  <p>We can place special emphasis on some words by making them <strong>bold</strong> or <em>italics</em></p>
+  
+  <p>Link
+  <a href="https://guides.github.com/features/mastering-markdown/">More on Markdown</a></p>
+  
+  <p>Lists</p>
+  
+  <ol>
+  <li>Step 1: Make numbered list</li>
+  <li>Step 2: ????</li>
+  <li>Step 3: Profit</li>
+  </ol>
+</blockquote>
+
+<ul>
+<li>Moon Knight</li>
+<li>Scarlet Which</li>
+<li>Gambit</li>
+<li>Hope Summers</li>
+</ul>
+
+<h2 id="syntax-highlighting">Syntax Highlighting</h2>
+
+<p>Another key feature that is a necessity when writing about code is syntax highlighting. Sculpin ships with highlightjs. No assembly required, batteries included!</p>
+
+<pre><code class="markdown">```php
+use Drupal\Core\DrupalKernel;
+use Symfony\Component\HttpFoundation\Request;
+
+$autoloader = require_once 'autoload.php';
+
+$kernel = new DrupalKernel('prod', $autoloader);
+
+$request = Request::createFromGlobals();
+$response = $kernel-&gt;handle($request);
+$response-&gt;send();
+
+$kernel-&gt;terminate($request, $response);
+`'`
+</code></pre>
+
+<pre><code class="php">use Drupal\Core\DrupalKernel;
+use Symfony\Component\HttpFoundation\Request;
+
+$autoloader = require_once 'autoload.php';
+
+$kernel = new DrupalKernel('prod', $autoloader);
+
+$request = Request::createFromGlobals();
+$response = $kernel-&gt;handle($request);
+$response-&gt;send();
+
+$kernel-&gt;terminate($request, $response);
+</code></pre>
+
+<h2 id="theming">Theming</h2>
+
+<p>Sculpin's theming system can be heavily customized, but for the most part does a great job of getting out of your way. It uses TWIG for it's templating engine, and relies on creating layouts, which are mostly just wrappers around page content.</p>
+
+<pre><code class="html"># source/_layouts/default.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    {% include "head" %}
+&lt;/head&gt;
+&lt;body id="body"&gt;
+    &lt;div class="page-content"&gt;
+        {% include "header" %}
+        &lt;main class="content" role="main"&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-md-6 col-md-offset-2"&gt;
+                    {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+                &lt;/div&gt;
+                &lt;div class="col-md-2"&gt;
+                    {% include "side_bar" %}
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        {% include "footer" %}
+    &lt;/div&gt;
+    {% include "scripts" %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>But that's a blog for another time.</p>
+
+<h2 id="yaml-formatter">YAML Formatter</h2>
+
+<p>Sculpin provides a method to add additional information about conten via a YAML formatter. YAML formatters are are a great way to provide meta information about the blog with in the markdown file. Information that can be used to do things like generate markup for something not easily supported in markdown, provide meta tag information, create taxonomy tagging of content, and more.</p>
+
+<p>Markdown without YAML formatter.</p>
+
+<pre><code> # Normal Markdown
+</code></pre>
+
+<p>With YAML formatter</p>
+
+<pre><code>---
+title: WTF is Sculpin
+date: 2017-03-31
+layout: default
+tags:
+    - wtf is
+    - sculpin
+featured_image: 
+    image: jackson.png
+ ---
+ # Markdown with spandex and a cape
+</code></pre>
+
+<p>The YAML formatters are seperated by <code>---</code> and written in YAML syntax. The YAML formatter will be parsed and injected into every page twig template using <code>page.%KEY%</code>. Nested structures are accessible by using a <code>.</code> to decend through the structure.</p>
+
+<pre><code class="html">we can access YAML directives with the TWIG template view WTF is Sculpin
+
+&lt;img src="jackson.png"/&gt;
+
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Sculpin does exactly what it sets out to do, and does it well. It's a great tool for someone already familiar with PHP, looking for a way to quickly take TWIG templates, html, and markdown to create a static site that is easily deployable. While it can be extended by creating new bundles, it does not offer a lot in terms of managing dynamic content that requires server side interactions. It is a tool for a specific task, a task that it handles extremely well.</p>
+
+<p>A huge thanks to <a href="https://twitter.com/beausimensen">Beau D. Simensen</a> who created Sculpin, and being an all around awesome human being.</p>
+]]></content>
+    </entry>
+        <entry>
+        <title type="html"><![CDATA[An Impostor&#039;s New Blog]]></title>
+        <link href="https://zietlow.io/blog/an-impostors-new-blog"/>
+        <updated>2017-02-02T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/an-impostors-new-blog</id>
+        <content type="html"><![CDATA[<p>After a year and a half, I'm finally getting around to launching my new blog. That's a lot of time for a small static website. That should mean that this blog is packed full of innovative technologies, captivating designs, and polished features, right? It has to be perfect. Thankfully this is not perfect, or so I keep telling myself. Perfection is the number one reason I'm surrounded by half finished projects. Perfectionists often seem like super human people who strive for a higher quality than us mere mortals, but that's not the case. Perfection is a mask for fear, and an enemy to "done". This blog is my acceptance that imperfect and done is ultimately better than perfect and incomplete.</p>
+
+<p>Going back in time almost two years ago, my reasons for launching a blog were simple; I wanted to use it as a learning experience and to share my knowledge with others. I'm a developer by day and spend a lot of my time in the back-end of code, buried in logic. I put a great deal of effort into staying within my comfort zone. For example, I typically manage to sidestep doing anything design related. I'm not very good at it so I try to avoid it at all costs, but because I never get any practice I'm not very good at it. I started this project to break the cycle. Along with weak design skills I've never been a strong writer. Both were areas that I hoped to improve, all while sharing some of my experiences and expertise in hope that someone out there in Internet land would find it helpful.</p>
+
+<p>As I passed the 80% completion mark of everything I wanted to accomplish the biggest blocker quickly became perfection. I've traveled down this road many times before. It started as I began to approach what I had defined as being done. At the thought of my work leaving the comfort of my computer and being in front of my colleagues I became filled with doubt. I drastically change my expectations and exponentially increase the level of effort by adding more features, refactoring all of the things in the best (seemingly most clever), and doing another redesign. Just like that I'd gone from 80% completion back to 10%. "It's not good enough" was an easy justification for me to shelve this whole project... again.</p>
+
+<p>This quest for perfection wasn't about high quality standards, pride, or attention to detail, it was about procrastination and fear. As soon as a project came close to being done and released into the wild, I started fantasizing about my potential audience and their experience. I desperately desired to seem intelligent and clever, and for my blog to emphasize those qualities. But I secretly feared that I'm not. That I've stumbled and lucked into my position in life, and that at any moment of any day everyone is going to find out that I'm woefully under qualified and completely inept. <strong>I'm a fraud</strong>. Georgia State Psychologists Pauline R. Clance and Suzanne A. Imes describe this phenomenon as "Impostor Syndrome" in their paper “The Imposter Phenomenon in High Achieving Women: Dynamics and Therapeutic Intervention.”. (It’s worth noting in the years since this paper was first published there hasn’t been any evidence to support that this phenomenon affects genders differently.)</p>
+
+<p><em>I'm a fraud and everyone is going to find out.</em> Like most of the biggest fears in my life this one is irrational. I have several irrational fears, like flying, heights, and alligators to name a few. I panic when my airplane takes off. I fear that it's going to crash into the side of a mountain, but have no concern hopping in my car to drive somewhere, even though statistics tells me the latter is much more likely to kill me. Yet, I will still white knuckle my arm rests on the plane as if somehow I can help hold the plane together when something bad happens. Equally ridiculous is how I can be a fraud that moments away from being discovered for a bumbling idiot, yet as an idiot I was able to deceive everyone in the first place and for so long.</p>
+
+<p>Impostor syndrome is not all together uncommon, especially among high achieving people.</p>
+
+<blockquote>
+  <p>"The beauty of the impostor syndrome is you vacillate between extreme egomania and a complete feeling of: 'I'm a fraud! Oh God, they're on to me! I'm a fraud!" -Tina Fey</p>
+</blockquote>
+
+<p><br/></p>
+
+<blockquote>
+  <p>"What are you doing here? What do you think you’re doing? You’re going to be found out." - Liz Bingham (Managing partner Ernst &amp; Young)</p>
+</blockquote>
+
+<p><br/></p>
+
+<blockquote>
+  <p>"You think, 'Why would anyone want to see me again in a movie? And I don't know how to act anyway, so why am I doing this?" - Meryl Streep</p>
+</blockquote>
+
+<p><br/></p>
+
+<blockquote>
+  <p>"When you go and watch a rehearsal of something you've written and it stinks, the natural feeling is 'I stink.' I'm a fraud. I need to go and hide" - Chuck Lore (Writer of Big Bang Theory)</p>
+</blockquote>
+
+<p>I have an irrational fear, what now? Fear is good for exactly two things; preventing death, and overcoming. There's no conceivable way my life's in danger from since I'm not publishing a blog about butterflies, Chaos theory be damned. So it's time to try to overcome this fear. It's keeping me from several thing that I want in life.</p>
+
+<p>Here's what I'm doing about it.</p>
+
+<h3 id="do.-or-do-not.-there-is-no-try.">Do. or Do Not. There is No Try.</h3>
+
+<p>Irrational fear ultimately leads to suffering. It does no good. Instead of adding to an infinite todo list of things I'll never get done, I'm going to start marking them off. Instead of letting a fear of imperfections loom over me, I'm going to embrace it and invite it in for tea. I know it's there, I know what it is, I even know that other people have the sames fear and reservations. I'm going to move forward. My best learning experiences come from some of my biggest failures, so there really isn't any reason not to "do". I'm adopting the mentality that something either isn't worth my time, or it is and it’s 100% something I’m going to do. There is no try.</p>
+
+<p>Which brings me to today, the day I launch my blog, and share my fears. I'm sure I could spend another year ironing out thousands of imperfections (no really, I have a list), but that path would only end with tearing everything down because it's not perfect. I'm just going to do my best and hit publish, imperfections and all. I hope that others don't let fear stop them from accomplishing their goals. Fear is the path to the dark side... fear leads to anger... anger leads to hate... hate leads to suffering.</p>
+]]></content>
+    </entry>
+        <entry>
+        <title type="html"><![CDATA[Getting started with Upstart]]></title>
+        <link href="https://zietlow.io/blog/getting-started-with-upstart"/>
+        <updated>2013-10-17T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/getting-started-with-upstart</id>
+        <content type="html"><![CDATA[<p>Upstart is an event based monitoring system for monitoring and controlling services and daemons. Upstart is meant to be a replacement for the older System V init.d start up scripts with better optimizations in parrelism and boot time. It can be used to run serveral one off tasks, like that of any shell script, or can monitor long running background services.</p>
+
+<p>To create an upstart script, create a job configuration file in the /etc/init directory. All job configuration files follow the convention of <name>.conf where <name> is the name of the boot script for upstart.  Below is a base template of an example upstart script.</p>
+
+<pre><code>#cooljob.conf
+# my upstart template file
+# This script will start / stop something for me.
+description "Start/stop some service"
+version "1.0"
+author "Chris Zietlow"
+script
+  sleep 1000
+end script
+</code></pre>
+
+<p>Once an upstart job file is in place it will be available to several upstart commands.</p>
+
+<pre><code>start on starting hubot-irc
+stop on stopping hubot-irc
+respawn
+
+exec su - www-data -c 'cd /home/aczietlow/Web/hubot;
+export PORT=5000;
+export HUBOT_IRC_SERVER="irc.freenode.net";
+export HUBOT_IRC_ROOMS="#spyderbytedesign";
+export HUBOT_IRC_NICK="kikihubot";
+export HUBOT_IRC_UNFLOOD="true";
+export HUBOT_IRC_PRIVATE="true";
+export FILE_BRAIN_PATH=".";
+bin/hubot --adapter irc &gt;&gt; /var/log/kikibot/hipchat-1.log 2&gt;&amp;1'
+</code></pre>
+
+<h2 id="useful-commands">Useful commands</h2>
+
+<ul>
+<li><code>initctl start | status | stop &lt;script&gt;</code>
+
+<ul>
+<li>starts|stops the scripts under</li>
+</ul></li>
+<li><code>initctl list</code>
+
+<ul>
+<li>list scripts under /etc/init.d</li>
+</ul></li>
+<li><code>initctl start | status | stop &lt;script&gt;</code> 
+
+<ul>
+<li>shorthand for initctl start | status | stop</li>
+</ul></li>
+<li><code>initctl log-priority</code> 
+
+<ul>
+<li>displays the log priority</li>
+</ul></li>
+<li><code>initctl log-priority debug | messages</code>
+
+<ul>
+<li>change the messgae priority chkconfig - enable or disable systems services chkconfig <service> --list - check what run levels service is running over</li>
+</ul></li>
+</ul>
+]]></content>
+    </entry>
+        <entry>
+        <title type="html"><![CDATA[Fun linux Terminal Tools]]></title>
+        <link href="https://zietlow.io/blog/fun-linux-terminal-tools"/>
+        <updated>2012-05-31T00:00:00+00:00</updated>
+        <id>https://zietlow.io/blog/fun-linux-terminal-tools</id>
+        <content type="html"><![CDATA[<p>Anyone with a UNIX based machine (Linux or MAC) has access to a terminal. Anyone with a Linux computer has almost undoubtedly dabbled with command line utilities for some period of time. Here are a few little known terminal tools that I found interesting. I'll give examples of the tools, though it's worth noting that I'm on an Ubuntu Computer.</p>
+
+<pre><code>slurm: Displays network load using ascii art. 
+slurm -i eth0 
+</code></pre>
+
+<pre><code>mtr: Traceroute on steroids. The kind the NCAA frowns on.
+mtr www.google.com 
+</code></pre>
+
+<pre><code>taskwarrior (package name: task): task add make todo list, task add relax feature rich console based todo list
+</code></pre>
+
+<pre><code>nethack (package name: nethack-console): nethack For you truly hard core gamers a ascii art text based dungeon explorer move with the (h,j,k,l) keys open doors with o “?” for much needed help
+</code></pre>
+]]></content>
+    </entry>
+    </feed>

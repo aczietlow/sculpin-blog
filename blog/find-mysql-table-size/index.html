@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find mysql Table Size &mdash; Chris Zietlow</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="theme-color" content="#9876AA">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="mysql, code snippet">
+
+    
+    <link rel="icon" href="https://zietlow.io/favicon.ico">
+    <link rel="stylesheet" href="https://zietlow.io/components/highlightjs/styles/github.css"/>
+    <link href="https://zietlow.io/components/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="https://zietlow.io/code/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="alternate" type="application/atom+xml" href="https://zietlow.io/atom.xml"
+          title="Chris Zietlow activity feed"/>
+
+    <link rel="shortcut icon" sizes="76x76" href="/assets/imgs/jackson/76x76.png">
+    <link rel="shortcut icon" sizes="120x120" href="/assets/imgs/jackson/120x120.png">
+    <link rel="shortcut icon" sizes="128x128" href="/assets/imgs/jackson/128x128.png">
+    <link rel="shortcut icon" sizes="152x152" href="/assets/imgs/jackson/152x152.png">
+    <link rel="shortcut icon" sizes="196x196" href="/assets/imgs/jackson/196x196.png">
+    <link rel="shortcut icon" sizes="512x512" href="/assets/imgs/jackson/512x512.png">
+    <link rel="shortcut icon" sizes="1024x1024" href="/assets/imgs/jackson/1024x1024.png">
+    <link rel="shortcut icon" sizes="2048x2048" href="/assets/imgs/jackson/2048x2048.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/imgs/jackson/76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/imgs/jackson/120x120.png">
+    <link rel="apple-touch-icon" sizes="128x128" href="/assets/imgs/jackson/128x128.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/imgs/jackson/152x152.png">
+    <link rel="apple-touch-icon" sizes="196x196" href="/assets/imgs/jackson/196x196.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/assets/imgs/jackson/512x512.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="/assets/imgs/jackson/1024x1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="/assets/imgs/jackson/2048x2048.png">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://zietlow.io/components/bootstrap/js/bootstrap.js"></script>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-2321595869015354",
+            enable_page_level_ads: true
+        });
+    </script>
+    
+    
+    
+    </head>
+<body id="body">
+      <div class="hero-image" style="background-image: url('https://zietlow.io/assets/imgs/hero_image.jpg')">
+    <img src="https://zietlow.io/assets/imgs/me.png" class="heroimage--portrait-thumbnail" alt="Zietlow">
+</div>
+<span class="home-button">
+    <a href="https://zietlow.io/"><i class="fa fa-home fa-3x"></i></a>
+</span>
+<header class="container">
+    <div class="row">
+        <div class="span6 offset3">
+            <div class="menu">
+                <span><a href="https://zietlow.io/blog">Blogs</a></span>
+                <span><h1 class="title">Chris Zietlow</h1></span>
+                <span><a href="https://zietlow.io/about">About</a></span>
+            </div>
+            <div class="sub-menu">
+                <a href="https://twitter.com/aczietlow"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.drupal.org/u/aczietlow"><i class="fa fa-drupal"></i></a>
+                <a href="https://github.com/aczietlow"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+</header>  <div class="container-fluid">
+    <main class="content" role="main">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+              <article class="blog ">
+        <header>
+            <h2>Find mysql Table Size</h2>
+        </header>
+        <p class="date">Sep 22, 2017</p>
+                <p class="tags">
+                            <a href="https://zietlow.io/blogs/tags/mysql">mysql</a>,                             <a href="https://zietlow.io/blogs/tags/code%20snippet">code snippet</a>                    </p>
+                <div>
+                        <h2 id="tl%3Bdr">TL;DR</h2>
+
+<p>A sql query to list the size of database tables on a mysql server.</p>
+
+<pre><code class="mysql">SELECT concat( table_schema, '.', table_name ) table_name,
+       concat( round( data_length / ( 1024 *1024 ) , 2 ) , 'M' ) data_length,
+       concat( round( index_length / ( 1024 *1024 ) , 2 ) , 'M' ) index_length,
+       concat( round( round( data_length + index_length ) / ( 1024 *1024 ) , 2 ) , 'M' ) total_size
+FROM information_schema.TABLES
+ORDER BY LENGTH(total_size) DESC, total_size DESC
+LIMIT 20;
+</code></pre>
+
+<h2 id="problem">Problem</h2>
+
+<p>I found myself working on a project that had been in active development for 5 years and had a 25 GB database. One of my tasks was to implement automated testing and build a CD/CI pipeline in an effort to decrease the amount of bugs we were shipping and decrease the feedback loop on newly implemented features. The largest challenge was the amount of time it took to build a fresh instance of the site. This was almost entirely due to the size of the database.</p>
+
+<p>Typically I would look at deleting all content to drastically trim the size of the database, as it's not needed for testing. However, a very complex data architecture made it difficult to separate content from configuration. Using the above query, I was able to identify which tables were the largest, and quickly focus on efficiently trimming the size of the database down. e.g. We had implemented duplicate logging paradigms without a method to truncate data over time. This accounted for about 6 GB by itself.</p>
+
+<p>I also use the results to identify if any of our indexes could be refactored to be more efficient. An index size that closely matches the table_data size could indicate redundant or duplicate index entries.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>It queries the information schema table to get the size of the database on disk. Initially I found that the <code>data_length</code> was significantly different from the size on disk, which led to the combination of <code>data_length</code> and <code>index_length</code>. Using some simple math I convert the bytes into MB to make the output more human readable. Finally I sort using a natural number sort, similar to php's nat_sort of alpha-numeric values.</p>
+
+            <a href="#body">Back To Top</a>
+        </div>
+
+            </article>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'zietlow'; // required: replace example with your forum shortname
+
+
+    
+    
+    
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered byDisqus.</a>
+</noscript>
+
+        </div>
+        <div class="col-md-2">
+          
+Warning: count(): Parameter must be an array or an object that implements Countable in /Users/czietlow/Sites/sculpin-blog/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1237
+
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-2">
+            <div>
+                <span><a href="https://zietlow.io/privacy">Privacy</a></span>
+            </div>
+            &copy; 2020 Chris Zietlow | Powered by <a href="https://sculpin.io/">Sculpin</a>
+        </div>
+    </div>
+
+
+</footer>  <script>window.jQuery || document.write('<script src="https://zietlow.io/components/jquery/jquery.min.js"><\/script>')</script>
+
+
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-106922423-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+<script src="https://zietlow.io/components/highlightjs/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Chris Zietlow]]></title>
+    <link href="https://zietlow.io/blogs/tags/impostor.xml" rel="self"/>
+    <link href="https://zietlow.io/"/>
+    <updated>2020-07-19T20:55:40+00:00</updated>
+    <id>https://zietlow.io/</id>
+            <author>
+                        <email><![CDATA[aczietlow@gmail.com]]></email>        </author>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+    </feed>

@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /blogs/tags/
+Disallow: /blog/categories/
+
+Sitemap: https://zietlow.io/sitemap.xml

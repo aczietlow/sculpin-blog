@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: zietlow.io
+Token: a87ea0d586b78770567bfb7f315e1bb95dd4cba1c2da4d6ebdcd0b604669c771
